@@ -1,3 +1,11 @@
-h1 {
-    color: red;
+body {
+    background-image: url(../images/castle-with-daffodils.jpg);
+    background-repeat: no-repeat;
+    background-position: cover;
+
 }
+
+a {
+    text-decoration: none;
+}
+
