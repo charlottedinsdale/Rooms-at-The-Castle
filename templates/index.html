@@ -1,5 +1,10 @@
 {% load static %}
 
+<!-- INSERT ROOM, HOME AND CONTACT URLS-->
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,9 +45,19 @@
                         <a class="nav-link" href="#" aria-label="Link to Contact Us Page">Contact Us</a>
                     </li>
                     <!-- Make an if statement to change sign in status -->
+                    {% if user.is_authenticated %}
                     <li>
-                        <a class="nav-link" href="#" aria-label="Link to Contact Us Page">Sign In/Up</a>
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    {% else %}
+                    <li>
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
