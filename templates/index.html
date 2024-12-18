@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django-Setup</title>
+    <title>The Castle Hotel</title>
     <!-- Google Fonts CSS -->
 
     <!-- Font Awesome CSS -->
@@ -26,7 +26,9 @@
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
         <div class="container-xxl navbar-container">
             <a href="index.html" class="navbar-brand-text heading fw-bold bee-title-link" aria-label="Bee Inclusive-Homepage">
-               <span><img src="assets/images/bee-icon-borderised-small.webp" alt="Castle Hotel Logo" class="castle-logo"></span> <h1 class="castle-title">The Castle Hotel</h1>
+               <span><img src="" alt="Castle Hotel Logo" class="castle-logo"></span>
+               <h1 class="castle-title">The Castle Hotel</h1>
+               <p id="slogan">Rooms at the heart of the Devonshire countryside</p>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,16 +48,16 @@
                     </li>
                     <!-- Make an if statement to change sign in status -->
                     {% if user.is_authenticated %}
-                    <li>
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Sign Out</a>
                     </li>
                     {% else %}
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
+                            href="{% url 'account_signup' %}">Sign Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Sign In</a>
                     </li>
                     {% endif %}
                 </ul>
