@@ -12,7 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Castle Hotel</title>
     <!-- Google Fonts CSS -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
     <!-- Font Awesome CSS -->
 
     <!-- Bootstrap CSS -->
@@ -27,7 +29,7 @@
         <div class="container-xxl navbar-container">
             <a href="index.html" class="navbar-brand-text heading fw-bold bee-title-link" aria-label="Bee Inclusive-Homepage">
                <span><img src="" alt="Castle Hotel Logo" class="castle-logo"></span>
-               <h1 class="castle-title">The Castle Hotel</h1>
+               <h1 class="castle-title cinzel">The Castle Hotel</h1>
                <p id="slogan">Rooms at the heart of the Devonshire countryside</p>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -37,8 +39,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about-section"
-                            aria-label="Link to About Section">About</a>
+                        <a class="nav-link" href="#about-section" aria-label="Link to About Section">About</a>
                     </li>
                     <li>
                         <a class="nav-link" href=# aria-label="Link to Our Rooms Page">Our Rooms</a>
@@ -70,22 +71,47 @@
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
     </main>
     <!-- FOOTER -->
-    <div class="container-fluid footer-container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-          <p class="col-md-4 mb-0">Built by Charlotte Dinsdale<a href="https://github.com/charlottedinsdale" target="_blank"><span><i class="fa fa-github"></i></span></a></p>
-          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <img src="assets/images/bee-icon-borderised-small.webp" width="40" height="40">
-          </a>
-          <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><i class="fa fa-facebook"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><i class="fa fa-instagram"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><i class="fa fa-twitter"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"><i class="fa fa-youtube"></i></a></li>
-          </ul>
-        </footer>
-    </div>  
+    <footer class="bg-dark text-light pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <!-- Address -->
+                <div class="col-12 col-sm-4 col-md-4 mb-4 footer-item">
+                    <h5 class="cinzel">Address</h5>
+                    <p>The Castle Hotel
+                    <br>1 Fore Street
+                    <br>Bradninch
+                    <br>Devon
+                    <br>EX5 4NN</p>
+                </div>
+                <!-- Social Links -->
+                <div class="col-12 col-sm-12 col-md-4 mb-4 footer-item">
+                    <h5 class="cinzel">Contact</h5>
+                    <p><i class="fa-solid fa-phone"></i> 07777777777</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@example.com</p>
+                    <p><a href=# ari-label="link to contact form"><i class="fa-solid fa-pen"></i> Contact Form</a></p>
+                </div>
+                <!-- Social Links -->
+                <div class="col-12 col-sm-12 col-md-4 mb-4 footer-item">
+                    <h5 class="cinzel">Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+            
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>Designed and Built By Charlotte Dinsdale <a href="https://github.com/charlottedinsdale/" class="text-light me-3"><i class="fab fa-github"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </footer> 
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b205b6285d.js" crossorigin="anonymous"></script>

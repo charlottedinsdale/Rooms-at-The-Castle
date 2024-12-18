@@ -1,11 +1,58 @@
+/* ------------------- GLOBAL STYLES ---------------------- */
 body {
-    background-image: url(../images/castle-with-daffodils.jpg);
-    background-repeat: no-repeat;
-    background-position: cover;
-
+    font-family: "Ysabeau Office", sans-serif;
+    background-color: rgb(2, 75, 42);
 }
 
 a {
+    color: #ffffff;
     text-decoration: none;
+
+}
+
+.cinzel {
+    font-family: 'Cinzel', serif;
+}
+
+i {
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;   
+    -o-transition: all .5s ease-in-out; 
+}
+
+i:hover {
+    color: #06b7a8;
+}
+
+/* ------------------- Header ---------------------- */
+.castle-title {
+    font-weight: 800;
+}
+.navbar-container {
+    background-color: rgba(7, 28, 1, 0.7);
+}
+
+.nav-link {
+    font-size: larger;
+    font-weight: 600;
+    color:#ffffff;
+}
+
+
+/* ------------------- Footer ---------------------- */
+footer {
+    background-color: #013b1b;
+    color: #fff;
+    padding: 40px 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.footer-item {
+    text-align: center;
 }
 
