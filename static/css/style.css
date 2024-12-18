@@ -29,6 +29,11 @@ i:hover {
 .castle-title {
     font-weight: 800;
 }
+
+#slogan {
+    padding-left: 35px;
+}
+
 .navbar-container {
     background-color: rgba(7, 28, 1, 0.7);
 }
@@ -36,7 +41,22 @@ i:hover {
 .nav-link {
     font-size: larger;
     font-weight: 600;
-    color:#ffffff;
+    color:#fafafa;
+}
+
+.nav-link:hover {
+    font-weight: 900;
+    color:#fff;
+}
+
+.nav-link:active, .nav-link:visited{
+    color:#fafafa
+}
+
+/*---------------------------------------------------------------------- Add class to nav links when pages created-------*/
+
+.nav-link-current {
+    font-weight: 800;
 }
 
 
