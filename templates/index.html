@@ -1,9 +1,13 @@
 {% load static %}
 
 <!-- INSERT ROOM, HOME AND CONTACT URLS-->
+<!-- {% url 'contact' as contact_url %} -->
+<!-- {% url 'home' as home_url %} -->
+{% url 'rooms' as rooms_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+<!-- {% url 'bookings' as bookings_url %} -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +54,7 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Sign Out</a>
                     </li>
+                    <!-- ADD CONDITIONAL FOR MY BOOKINGS --> 
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
@@ -104,7 +109,7 @@
             <!-- Copyright -->
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>Designed and Built By Charlotte Dinsdale <a href="https://github.com/charlottedinsdale/" class="text-light me-3"><i class="fab fa-github"></i></a></p>
+                    <p id="copyright">Designed and Built By Charlotte Dinsdale <a href="https://github.com/charlottedinsdale/" class="text-light me-3"><i class="fab fa-github"></i></a></p>
                 </div>
             </div>
         </div>
