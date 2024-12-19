@@ -26,12 +26,24 @@ i:hover {
 }
 
 /* ------------------- Header ---------------------- */
+.navbar {
+    position: sticky;
+    top: 0;
+}
+
 .castle-title {
     font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 #slogan {
     padding-left: 35px;
+}
+
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .navbar-container {
@@ -50,11 +62,10 @@ i:hover {
 }
 
 .nav-link:active, .nav-link:visited{
-    color:#fafafa
+    color:#fafafa 
 }
 
 /*---------------------------------------------------------------------- Add class to nav links when pages created-------*/
-
 .nav-link-current {
     font-weight: 800;
 }
@@ -65,7 +76,6 @@ footer {
     background-color: #013b1b;
     color: #fff;
     padding: 40px 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,5 +84,6 @@ footer {
 
 .footer-item {
     text-align: center;
+    font-size: 15px;
 }
 
