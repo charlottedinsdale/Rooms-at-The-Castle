@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-charlottedi-roomsatthec-32jpxx2y354.ws.codeinstitute-ide.net', 
@@ -48,10 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_summernote',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'rooms',
+    'bookings',
 ]
 
 SITE_ID = 1

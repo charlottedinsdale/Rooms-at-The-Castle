@@ -44,7 +44,8 @@
                         <a class="nav-link" href="#about-section" aria-label="Link to About Section">About</a>
                     </li>
                     <li>
-                        <a class="nav-link" href=# aria-label="Link to Our Rooms Page">Our Rooms</a>
+                        <a class="nav-link {% if request.path == rooms_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'rooms' %}" aria-label="Link to Our Rooms Page">Our Rooms</a>
                     </li>
                     <li>
                         <a class="nav-link" href="#" aria-label="Link to Contact Us Page">Contact Us</a>

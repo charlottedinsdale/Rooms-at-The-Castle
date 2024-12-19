@@ -70,6 +70,10 @@ i:hover {
     color:#fff;
 }
 
+.nav-link.active {
+    text-decoration: underline;
+}
+
 .nav-link:visited {
     color:#fafafa  !important;
 }
