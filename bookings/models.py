@@ -17,4 +17,9 @@ class Booking(models.Model):
         if self.guests > self.room.capacity:
             raise ValidationError(f'Cannot book more than {self.room.capacity} guests for this room.')
     def __str__(self):
-        return f"Booking Reference: {self.reference}"
+        return f"Booking Reference: {self.reference} made by {self.user}"
+
+class BlockRoom(models.Model):
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="blocked")
+    start_date = models.DateField
+    end_date = models.DateField
