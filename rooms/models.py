@@ -12,7 +12,7 @@ class Room(models.Model):
     description = models.TextField()
     image = models.ImageField()
     def __str__(self):
-        return f"{self.name} | {self.number_of_beds} bed"
+        return f"{self.name} room | {self.number_of_beds} bed"
 
 class RoomAvailability(models.Model):
     AVAILABLE = 'Available'

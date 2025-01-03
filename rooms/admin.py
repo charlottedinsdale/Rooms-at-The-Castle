@@ -8,7 +8,7 @@ class RoomAdmin(SummernoteModelAdmin):
     list_display = ('name', 'slug')
     search_fields = ['name']
     prepopulated_fields = {'slug': ('name',)}
-    summernote_fields = ('content',)
+    summernote_fields = ('description',)
 
 # Register your models here.
 admin.site.register(RoomAvailability)
