@@ -9,4 +9,11 @@
 
 <h1>Hello {{ room.name }} booking!</h1>
 
+{% if user.is_authenticated %}
+    <h1>Book now!</h1>
+    <script></script>
+{% else %}
+    <h1>Only signed in users can book a room at The Castle! Please Create an Account or Sign in to make your booking.</h1>
+{% endif %}
+
 {% endblock %}
