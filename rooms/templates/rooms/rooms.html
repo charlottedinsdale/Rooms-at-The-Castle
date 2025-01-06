@@ -1,7 +1,49 @@
 {% extends "index.html" %}
 
 {% block content %}
-<!-- HERO -->
 
-<!-- ABOUT -->
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for room in room_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <div>
+                                    {% if "placeholder" in post.featured_image.url %}
+                                    <img class="card-img-top" src="s"
+                                      alt="placeholder image">
+                                    {% else %}
+                                    <img class="card-img-top" src=" {{ room.image.url }}"
+                                      alt="{{ room.title }}">
+                                    {% endif %}
+                                    <p class="author"> Up to {{ room.capacity }} guests</p>
+                                </div>
+                            </div>
+                            <!-- add href to room detail -->
+                                <h2 class="card-title">{{ room.name }}</h2>
+                                <p class = "card-text">{{ room.description | safe }}</p>
+                            
+
+                            <hr />
+                            <p class="card-text text-muted h6">{{ post.created_on}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

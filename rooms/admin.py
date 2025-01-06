@@ -10,5 +10,4 @@ class RoomAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
     summernote_fields = ('description',)
 
-# Register your models here.
 admin.site.register(RoomAvailability)

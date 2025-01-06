@@ -12,5 +12,5 @@ class HomePage(TemplateView):
     template_name = 'index.html'
 
 class RoomsPage(generic.ListView):
-    queryset = (Room.objects)
+    queryset = (Room.objects.all())
     template_name = 'rooms/rooms.html'

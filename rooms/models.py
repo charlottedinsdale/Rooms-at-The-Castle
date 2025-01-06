@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -10,7 +11,7 @@ class Room(models.Model):
     capacity = models.IntegerField()
     price_per_night = models.DecimalField(decimal_places=2, max_digits=6)
     description = models.TextField()
-    image = models.ImageField()
+    image = CloudinaryField('image', default='placeholder')
     def __str__(self):
         return f"{self.name} room | {self.number_of_beds} bed"
 
