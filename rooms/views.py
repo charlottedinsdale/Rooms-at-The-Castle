@@ -14,3 +14,14 @@ class HomePage(TemplateView):
 class RoomsPage(generic.ListView):
     queryset = (Room.objects.all())
     template_name = 'rooms/rooms.html'
+
+def room_detail(request, slug):
+    queryset = Room.objects.all()
+    room = get_object_or_404(queryset, slug=slug)
+    return render(
+        request,
+        "room/room_detail.html",
+        {
+            "room": room,
+        }
+    )
