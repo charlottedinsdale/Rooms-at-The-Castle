@@ -20,7 +20,7 @@ def room_detail(request, slug):
     room = get_object_or_404(queryset, slug=slug)
     return render(
         request,
-        "room/room_detail.html",
+        "rooms/room_detail.html",
         {
             "room": room,
         }

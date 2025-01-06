@@ -9,7 +9,7 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="room-title">{{ room.name }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="room-subtitle">{{ room.capacity }} | {{ post.beds }}</p>
+                <p class="room-subtitle">Up to {{ room.capacity }} guests | {{ room.number_of_beds }} bed</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
@@ -30,6 +30,9 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- BOOK ROOM buton with href to bookings url  -->
       
 
 {% endblock content %}

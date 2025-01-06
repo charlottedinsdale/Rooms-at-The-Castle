@@ -27,11 +27,12 @@
                             </div>
                         
                             <!-- add href to room detail -->
+                            <a href="{% url 'room_detail' room.slug %}" class="room-link">
                                 <h2 class="card-title">{{ room.name }}</h2>
                                 <p class = "card-text">{{ room.description | safe }}</p>
-                            
+                            </a>
 
-                            <hr />
+                            <hr/>
                             <p class="card-text text-muted h6">{{ post.created_on}}
                             </p>
                         </div>
