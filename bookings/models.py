@@ -3,6 +3,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 from rooms.models import Room, RoomAvailability
+from datetime import datetime
 
 # Create your models here.
 class Booking(models.Model):
@@ -10,8 +11,8 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="booking")
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="booking")
     guests = models.PositiveIntegerField()
-    start_date = models.DateField()
-    end_date = models.DateField()
+    start_date = models.DateField(default=datetime.now)
+    end_date = models.DateField(default=datetime.now)
     def clean(self):
         """Custom validation to check that the number of guests is within room capacity."""
         if self.guests < 1:
@@ -32,7 +33,7 @@ class Booking(models.Model):
 
 class BlockRoom(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="blocking")
-    start_date = models.DateField()
-    end_date = models.DateField()
+    start_date = models.DateField(default=datetime.now)
+    end_date = models.DateField(default=datetime.now)
     def __str__(self):
         return f"{self.room} blocked from {self.start_date} to {self.end_date}"
