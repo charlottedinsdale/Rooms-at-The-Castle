@@ -9,7 +9,13 @@ class HomePage(TemplateView):
     """
     Displays home page"
     """
-    template_name = 'index.html'
+    template_name = 'home.html'
+
+class ContactPage(TemplateView):
+    """
+    Displays home page"
+    """
+    template_name = 'contact.html'
 
 class RoomsPage(generic.ListView):
     queryset = (Room.objects.all())

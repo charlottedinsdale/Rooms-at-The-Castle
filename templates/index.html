@@ -33,7 +33,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
         <div class="container-fluid navbar-container">
             <a href= "{% url 'home' %}" class="navbar-brand-text heading fw-bold bee-title-link" aria-label="The Castle Hotel Homepage">
-               <h1 class="castle-title cinzel">The Castle Hotel</h1>
+               <h1 id="castle-title" class="cinzel">The Castle Hotel</h1>
                <p id="slogan">Cosy rooms at the heart of the Devonshire countryside</p>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -43,14 +43,14 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about-section" aria-label="Link to About Section">About</a>
+                        <a class="nav-link" href="{% url 'home' %}#about-container" aria-label="Link to About Section">About</a>
                     </li>
                     <li>
                         <a class="nav-link {% if request.path == rooms_url %}active{% endif %}" aria-current="page"
                         href="{% url 'rooms' %}" aria-label="Link to Our Rooms Page">Our Rooms</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="#" aria-label="Link to Contact Us Page">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact' %}" aria-label="Link to Contact Us Page">Contact Us</a>
                     </li>
                     <!-- If statement to determine user sign in status -->
                     {% if user.is_authenticated %}
@@ -124,5 +124,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
     <!-- FullCalendar JS -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

@@ -31,14 +31,19 @@ i:hover {
     top: 0;
 }
 
-.castle-title {
+#castle-title {
     font-weight: 800;
     margin-top: 10px;
     margin-bottom: 0;
+    transition: 0.4s
 }
 
 #slogan {
     padding-left: 35px;
+}
+
+.hidden {
+    display:none;
 }
 
 .navbar {
@@ -47,7 +52,7 @@ i:hover {
 }
 
 .navbar-container {
-    background-color: rgba(7, 28, 1, 0.7);
+    background-color: rgba(20, 70, 10, 0.7);
 }
 
 .navbar-toggler {
