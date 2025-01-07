@@ -17,8 +17,9 @@ class Booking(models.Model):
         """Custom validation to check that the number of guests is within room capacity."""
         if self.guests < 1:
             raise ValidationError('Guests must be at least 1.')
-        if self.guests > self.room.capacity:
-            raise ValidationError(f'Cannot book more than {self.room.capacity} guests for this room.')
+        if hasattr(self, 'room_capacity') and self.room_capacity:
+            if self.guests > self.room_capacity:
+                raise ValidationError(f'Cannot book more than {self.room.capacity} guests for this room.')
 
     def total_price(self):
         if not self.start_date or not self.end_date:
@@ -29,4 +30,4 @@ class Booking(models.Model):
         return num_nights * self.room.price_per_night
 
     def __str__(self):
-        return f"Total Price: {booking.total_price()}. Booking Reference: {self.reference} made by {self.user}"
+        return f"Total Price: {self.total_price()}. Booking Reference: {self.reference} made by {self.user}"

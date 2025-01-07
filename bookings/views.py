@@ -89,11 +89,13 @@ def booking_view(request, slug):
             'title': status,
             'start': availability.start_date.isoformat(),
             'end': availability.end_date.isoformat(),
-            'allDay': True
+            'allDay': True,
+            'display': 'background',
         })
 
     if request.method == 'POST':
         form = BookingForm(request.POST, room=room)
+        form.room_capacity = room.capacity
         if form.is_valid():
             # Save the booking
             booking = form.save(commit=False)

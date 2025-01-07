@@ -26,6 +26,8 @@
     </script>
 
     <script>
+        let startDateTracker = false;
+        let endDateTracker = false;
         document.addEventListener('DOMContentLoaded', function() {
             // Retrieve the availability data from the script tag
             let availabilityData = JSON.parse(document.getElementById('availability-data').textContent);
@@ -43,7 +45,7 @@
                     // Prevent selecting dates marked as 'UNAVAILABLE'
                     return event.title === 'AVAILABLE';
                 },
-                select: function(info) {
+                /*select: function(info) {
                     // Handle the selection of available date range
                     let startDate = info.startStr;
                     let endDate = info.endStr;
@@ -54,17 +56,70 @@
 
                     // Enable the submit button
                     document.getElementById('submit-button').disabled = false;
+                },*/
+                dateClick: function (info) {
+                    if (!startDateTracker) {
+                        startDateTracker = info.dateStr;
+                        calendar.select(startDateTracker);
+                        document.getElementById('start_date').value = startDateTracker;
+                        document.getElementById('end_date').value = startDateTracker;
+                        document.getElementById('submit-button').disabled = false;
+                    } else if (!endDateTracker) {
+                        endDateTracker = moveToNextDay(info.dateStr);
+
+                        // Check if the range contains unavailable dates
+                        let rangeContainsUnavailable = false;
+                        let rangeStart = new Date(startDateTracker);
+                        let rangeEnd = new Date(endDateTracker);
+
+                        // Loop through each day in the range
+                        for (let currentDate = new Date(rangeStart); currentDate <= rangeEnd; currentDate.setDate(currentDate.getDate() + 1)) {
+                            let dateStr = currentDate.toISOString().split('T')[0];
+                            // Check if this date is unavailable
+                            let event = calendar.getEvents().find(event => 
+                                event.startStr === dateStr && event.title === 'UNAVAILABLE'
+                            );
+                            if (event) {
+                                rangeContainsUnavailable = true;
+                                break;
+                            }
+                        }
+
+                        if (rangeContainsUnavailable) {
+                            alert('Your selected range contains unavailable dates. Please try again.');
+                            startDateTracker = false;
+                            endDateTracker = false;
+                            calendar.unselect(); // Clear the selection
+                            document.getElementById('submit-button').disabled = true;
+                        } else {
+                            // If no unavailable dates, complete the selection
+                            calendar.select(startDateTracker, endDateTracker);
+                            document.getElementById('start_date').value = startDateTracker;
+                            document.getElementById('end_date').value = endDateTracker;
+                        }
+                    } else {
+                        // Reset the selection
+                        startDateTracker = false;
+                        endDateTracker = false;
+                        calendar.unselect();
+                        document.getElementById('submit-button').disabled = true;
+
+                    }
                 },
                 eventDidMount: function(info) {
                     // Style the unavailable dates with a red background
                     if (info.event.title === 'UNAVAILABLE') {
-                        info.el.style.backgroundColor = '#dc3545';  // Red for unavailable
-                    } else {
-                        info.el.style.backgroundColor = '#28a745';  // Green for available
+                          info.el.style.backgroundColor = '#36454F';  // Red for unavailable
                     }
                 }
             });
 
+
+            function moveToNextDay(dateStr) {
+                let date = new Date(dateStr); // Convert to Date object
+                date.setDate(date.getDate() + 1); // Add 1 day
+                return date.toISOString().split('T')[0]; // Convert back to YYYY-MM-DD format
+            }
             // Render the calendar
             calendar.render();
         });
