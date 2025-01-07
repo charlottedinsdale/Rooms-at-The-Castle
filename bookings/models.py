@@ -30,10 +30,3 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"Total Price: {booking.total_price()}. Booking Reference: {self.reference} made by {self.user}"
-
-class BlockRoom(models.Model):
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="blocking")
-    start_date = models.DateField(default=datetime.now)
-    end_date = models.DateField(default=datetime.now)
-    def __str__(self):
-        return f"{self.room} blocked from {self.start_date} to {self.end_date}"

@@ -7,81 +7,68 @@
 
 {% block content %}
 
-<form method="POST">
-    {% csrf_token %}
-</form>
-
-<h1>Hello {{ room.name }} booking!</h1>
+<h1>Booking for {{ room.name }}</h1>
 
 {% if user.is_authenticated %}
-<h1>Room Booking for {{ room.name }}</h1>
+    <form id="booking-form" method="POST" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" id="start_date" name="start_date">
+        <input type="hidden" id="end_date" name="end_date">
+        <button type="submit" id="submit-button" disabled>Submit Booking</button>
+    </form>
 
-<div id="calendar"></div>
+    <div id="calendar"></div>
 
-<script id="availability-data" type="application/json">
-    {{ availability_data|safe }}
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Retrieve the availability data from the script tag
-        let availabilityData = JSON.parse(document.getElementById('availability-data').textContent);
+    <!-- Availability data passed to JS from Django -->
+    <script id="availability-data" type="application/json">
+        {{ availability_data|safe }}
+    </script>
 
-        // Reference the calendar element in your HTML
-        let calendarEl = document.getElementById('calendar');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve the availability data from the script tag
+            let availabilityData = JSON.parse(document.getElementById('availability-data').textContent);
 
-        // Initialize FullCalendar with the room availability data
-        let calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            selectable: true,  // Allow users to select dates
-            events: availabilityData,  // Populate the calendar with availability data
-            selectOverlap: function(event) {
-                // Prevent selecting dates marked as 'UNAVAILABLE'
-                return event.title === 'AVAILABLE';  
-            },
-            select: function(info) {
-                // Handle the selection of available dates
-                var startDate = info.startStr;
-                var endDate = info.endStr;
+            // Reference the calendar element in your HTML
+            let calendarEl = document.getElementById('calendar');
 
-                if (confirm(`Do you want to book from ${startDate} to ${endDate}?`)) {
-                    // Send the booking request via AJAX
-                    $.ajax({
-                        url: window.location.pathname,  // Post to the same
-                        url: window.location.pathname,  // Post to the same URL
-                        type: "POST",
-                        data: {
-                            room: "{{ room.id }}",  // Pass the room ID from Django
-                            user: "{{ request.user.id }}",  // Pass the user ID from Django
-                            start_date: startDate,
-                            end_date: endDate,
-                            guests: 1,  // Customize this value based on your requirements
-                            csrfmiddlewaretoken: "{{ csrf_token }}"  // Include CSRF token
-                        },
-                        success: function(response) {
-                            if (response.status === 'success') {
-                                alert('Booking successful!');
-                                calendar.refetchEvents();  // Refresh calendar to show new availability
-                            } else {
-                                alert('Error: ' + response.message);
-                            }
-                        }
-                    });
+            // Initialize FullCalendar with the room availability data
+            let calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                selectable: true,  // Allow users to select dates
+                selectMirror: true,  // Shows a placeholder while selecting a date range
+                events: availabilityData,  // Populate the calendar with availability data
+                selectOverlap: function(event) {
+                    // Prevent selecting dates marked as 'UNAVAILABLE'
+                    return event.title === 'AVAILABLE';
+                },
+                select: function(info) {
+                    // Handle the selection of available date range
+                    let startDate = info.startStr;
+                    let endDate = info.endStr;
+
+                    // Set the start and end dates in the form
+                    document.getElementById('start_date').value = startDate;
+                    document.getElementById('end_date').value = endDate;
+
+                    // Enable the submit button
+                    document.getElementById('submit-button').disabled = false;
+                },
+                eventDidMount: function(info) {
+                    // Style the unavailable dates with a red background
+                    if (info.event.title === 'UNAVAILABLE') {
+                        info.el.style.backgroundColor = '#dc3545';  // Red for unavailable
+                    } else {
+                        info.el.style.backgroundColor = '#28a745';  // Green for available
+                    }
                 }
-            },
-            eventDidMount: function(info) {
-                // Style the unavailable dates with a red background
-                if (info.event.title === 'UNAVAILABLE') {
-                    info.el.style.backgroundColor = '#dc3545';  // Red for unavailable
-                } else {
-                    info.el.style.backgroundColor = '#28a745';  // Green for available
-                }
-            }
+            });
+
+            // Render the calendar
+            calendar.render();
         });
-
-        // Render the calendar
-        calendar.render();
-    });
-</script>
+    </script>
 {% else %}
     <h1>Only signed in users can book a room at The Castle! Please Create an Account or Sign in to make your booking.</h1>
 {% endif %}
