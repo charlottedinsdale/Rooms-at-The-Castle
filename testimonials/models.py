@@ -10,6 +10,8 @@ class Testimonial(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="testimonial", blank=True)
     content = models.TextField(max_length=5000)
     image = CloudinaryField('image', blank=True)
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"{self.user} wrote a testimonial!"
 
