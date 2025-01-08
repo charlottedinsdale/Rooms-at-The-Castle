@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h2>Booking Confirmation for: {{ booking.reference }}</h2>
+<h3>Congratulations {{ booking.user }}! Your booking for {{ booking.guests }} guests in the {{ booking.room.name }} from {{ booking.start_date }} to {{ booking.start_date }} is confirmed!</h1>
+
+<a href="{% url 'home' %}" class="btn main-button">Return to Home</a>
+{% endblock %}

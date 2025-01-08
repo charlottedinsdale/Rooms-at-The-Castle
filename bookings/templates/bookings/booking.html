@@ -21,6 +21,43 @@
         <div id="calendar"></div>
     </div>
 
+    <!-- Bootstrap Modal for Date Confirmation -->
+    <div class="modal fade" id="confirmDateModal" tabindex="-1" aria-labelledby="confirmDateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDateModalLabel">Confirm Dates</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="confirm-dates-text">You have selected from <span id="start-date-modal"></span> to <span id="end-date-modal"></span>. Do you want to proceed?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirm-dates-btn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Modal for Booking Confirmation -->
+    <div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingSuccessModalLabel">Booking Confirmed</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your booking has been successfully confirmed! Your booking reference is <span id="booking-reference"></span>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Availability data passed to JS from Django -->
     <script id="availability-data" type="application/json">
         {{ availability_data|safe }}
@@ -97,6 +134,12 @@
                             calendar.select(startDateTracker, endDateTracker);
                             document.getElementById('start_date').value = startDateTracker;
                             document.getElementById('end_date').value = endDateTracker;
+                            // Show selected dates in the modal
+                            document.getElementById('start-date-modal').textContent = startDateTracker;
+                            document.getElementById('end-date-modal').textContent = endDateTracker;
+                            // Show confirmation modal
+                            let confirmDateModal = new bootstrap.Modal(document.getElementById('confirmDateModal'), {});
+                            confirmDateModal.show();
                         }
                     } else {
                         // Reset the selection
@@ -108,13 +151,27 @@
                     }
                 },
                 eventDidMount: function(info) {
-                    // Style the unavailable dates with a red background
+                    // Style the unavailable dates with a grey background
                     if (info.event.title === 'UNAVAILABLE') {
-                          info.el.style.backgroundColor = '#36454F';  // Red for unavailable
+                          info.el.style.backgroundColor = '#36454F';  // Grey for unavailable
                     }
                 }
             });
+           // Confirmation button in the modal
+           document.getElementById('confirm-dates-btn').addEventListener('click', function () {
+                // Set the selected end date into the form
+                document.getElementById('end_date').value = endDateTracker;
+                
+                // Enable the submit button
+                document.getElementById('submit-button').disabled = false;
+                
+                // Hide the confirmation modal
+                let confirmDateModal = bootstrap.Modal.getInstance(document.getElementById('confirmDateModal'));
+                confirmDateModal.hide();
 
+                // Optionally, clear the calendar selection if you want to prevent further changes
+                calendar.unselect();
+            });
 
             function moveToNextDay(dateStr) {
                 let date = new Date(dateStr); // Convert to Date object

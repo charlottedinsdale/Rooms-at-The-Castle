@@ -69,8 +69,9 @@
 
 #     return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BookingForm
+from .models import Booking
 from rooms.models import Room, RoomAvailability
 from django.http import JsonResponse
 import json
@@ -103,6 +104,8 @@ def booking_view(request, slug):
             booking.room = room  # Set the room being booked
             booking.save()
 
+            return redirect('booking_confirmation', booking_reference=booking.reference)
+
             # Update RoomAvailability to mark booking dates as unavailable
             RoomAvailability.objects.create(
                 room=room,
@@ -110,8 +113,6 @@ def booking_view(request, slug):
                 end_date=form.cleaned_data['end_date'],
                 availability_status=RoomAvailability.UNAVAILABLE
             )
-
-            return JsonResponse({'status': 'success', 'message': 'Booking successful!'})
 
     else:
         form = BookingForm(room=room)  # Initialize the form 
@@ -123,3 +124,13 @@ def booking_view(request, slug):
     }
 
     return render(request, 'bookings/booking.html', context)
+
+def booking_confirmation_view(request, booking_reference):
+    queryset = Booking.objects.all()
+    booking = get_object_or_404(Booking, reference=booking_reference)
+
+    context = {
+    'booking': booking,
+    }
+    
+    return render(request, 'bookings/booking_confirmation.html', context)
