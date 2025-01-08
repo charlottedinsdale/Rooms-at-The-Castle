@@ -3,16 +3,19 @@
 
 {% block content %}
 
-<section id="parallax-contiainer">
-    
+<div class="parallax-one"></div>
+
+
+<section name="about-container" id="about-container" class="home-section">
+    <div class="card">
+        <h1>About Us</h1>
+        <p>Brothers Simon and Pete bought The Castle together in 2010 and have since started </p>
+    </div>
 </section>
 
-<section name="about-container" id="about-container">
-    <h1>About Us</h1>
-    <p>Brothers Simon and Pete bought The Castle together in 2010 and have since started </p>
-</section>
+<div class="parallax-two"></div>
 
-<section name="testimonials-container" id="testimonials-container">
+<section name="testimonials-container" id="testimonials-container" class="home-section">
     <h1>Testimonials</h1>
     <button class="btn main-button">
         {% if user.is_authenticated %}
@@ -22,5 +25,16 @@
         {% endif %}
     </button>
 </section>
+
+<div class="parallax-three"></div>
+
+<section class="home-section">
+    <div class="card" id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.182638604475!2d-3.4235251747823026!3d50.82778086012545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486dbd7b44b78c71%3A0x1cc9e3beabcfa4d6!2sThe%20Castle%20Hotel!5e0!3m2!1sen!2suk!4v1736345226256!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </section>
+
+<div class="parallax-four"></div>
+
 
 {% endblock %}
