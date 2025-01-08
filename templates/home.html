@@ -18,6 +18,9 @@
 <section name="testimonials-container" id="testimonials-container" class="home-section">
     <h1>Testimonials</h1>
     <button class="btn main-button">
+        {% for testimonial in testimonial_list %}
+            <p>{{ testimonial.user }} wrote: {{ testimonial.content }}</p>
+        {% endfor %}
         {% if user.is_authenticated %}
         <p class="button-text">Write your Own Testimonial</p>
         {% else %}
