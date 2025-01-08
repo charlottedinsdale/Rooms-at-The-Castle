@@ -1,7 +1,7 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80 ) {
     document.getElementById("castle-title").style.fontSize = "1.5rem";
     document.getElementById("slogan").classList.add("hidden");
   } else {

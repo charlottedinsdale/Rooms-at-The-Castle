@@ -27,6 +27,7 @@
                 <p class="card-text">
                     {{ room.description | safe }}
                 </p>
+                <a href="{% url 'booking_view' room.slug %}"><button class="btn main-button">Book Room</button></a>
             </div>
         </div>
     </div>

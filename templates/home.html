@@ -9,6 +9,18 @@
 
 <section name="about-container" id="about-container">
     <h1>About Us</h1>
+    <p>Brothers Simon and Pete bought The Castle together in 2010 and have since started </p>
+</section>
+
+<section name="testimonials-container" id="testimonials-container">
+    <h1>Testimonials</h1>
+    <button class="btn main-button">
+        {% if user.is_authenticated %}
+        <p class="button-text">Write your Own Testimonial</p>
+        {% else %}
+        <p class="button-text">Sign in to Write Your Own</p>
+        {% endif %}
+    </button>
 </section>
 
 {% endblock %}

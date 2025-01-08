@@ -25,6 +25,16 @@ i:hover {
     color: #06b7a8;
 }
 
+.main-button {
+    background-color: #14460AB3;
+}
+
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(199, 223, 186, 0.95);
+}
+
 /* ------------------- Header ---------------------- */
 .navbar {
     position: sticky;
@@ -82,9 +92,25 @@ i:hover {
 .nav-link:visited {
     color:#fafafa  !important;
 }
+
 /*---------------------------------------------------------------------- Add class to nav links when pages created-------*/
 .nav-link-current {
     font-weight: 800;
+}
+
+@media only screen and (max-width: 768px) {
+    #slogan {
+        display: none; 
+    }
+    #castle-title {
+        font-size: 1.5rem !important; 
+    }
+}
+
+/* ------------------ Rooms Pages */
+.room-img {
+    height: 300px;
+    overflow: hidden;
 }
 
 /* ------------------ Accounts Pages */
