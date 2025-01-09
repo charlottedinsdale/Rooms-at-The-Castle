@@ -22,6 +22,7 @@ Rooms at The Castle is a room booking website designed to advertise rooms in a p
 ## Look and Feel
 
 The website is designed to reflect the peaceful countyside within which the Castle sits....
+Green colourscheme inspired by the Devon flag and reflecting the colour of the pub itself.
 
 ## Colourscheme
 
@@ -64,6 +65,8 @@ The website is designed to reflect the peaceful countyside within which the Cast
 
 ## Languages, Frameworks and Packages
 
+The site was developed using a Django framework, with Python being the primary backend language. JavaScript was used for the calendar functionality and HTML was used alongside the Django template language to display data in the frontend. I used CSS and employed Bootstrap classes to style the website alongside some JavaScript for dynamic styling.
+
 ### Languages and Frameworks
 
 ### Django Packages
@@ -88,8 +91,16 @@ The website is designed to reflect the peaceful countyside within which the Cast
 
 # Deployment
 
+Webiste was deployed regularly to Heroku for testing. The final live site is deployed to Heroku and available for viewing here: https://the-castle-fe36c8bb2ab4.herokuapp.com/.
+
 # Sources
 
-# Acknoledgements
+- W3 Schools for parallax code
+- Freepik for generic room images
+- FullCalendar for JavaScript calendar and documentation 
+
+# Acknowledgements
+
+Thank you to all the teaching staff at the Code Institute, especially Kevin for his help getting the calendar functionality in place, Paul for the constant motivation and feedback and the Coding Coaches for their help with bugs.
 
 
