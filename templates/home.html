@@ -6,7 +6,7 @@
 <div class="parallax-one"></div>
 
 
-<section name="about-container" id="about-container" class="home-section">
+<section name="about" id="about" class="home-section">
     <div class="card">
         <h1>About Us</h1>
         <p>Brothers Simon and Pete bought The Castle together in 2010 and have since started </p>
@@ -15,18 +15,18 @@
 
 <div class="parallax-two"></div>
 
-<section name="testimonials-container" id="testimonials-container" class="home-section">
+<section name="testimonials" id="testimonials" class="home-section">
     <h1>Testimonials</h1>
-    <button class="btn main-button">
-        {% for testimonial in testimonial_list %}
+    {% for testimonial in testimonial_list %}
             <p>{{ testimonial.user }} wrote: {{ testimonial.content }}</p>
-        {% endfor %}
+    {% endfor %}
+    <a href="{% url 'testimonials' %}" class="btn main-button">
         {% if user.is_authenticated %}
         <p class="button-text">Write your Own Testimonial</p>
         {% else %}
         <p class="button-text">Sign in to Write Your Own</p>
         {% endif %}
-    </button>
+    </a>
 </section>
 
 <div class="parallax-three"></div>

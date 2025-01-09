@@ -43,14 +43,14 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}#about-container" aria-label="Link to About Section">About</a>
+                        <a class="nav-link" href="{% url 'home' %}#about" aria-label="Link to About Section">About</a>
                     </li>
                     <li>
                         <a class="nav-link {% if request.path == rooms_url %}active{% endif %}" aria-current="page"
                         href="{% url 'rooms' %}" aria-label="Link to Our Rooms Page">Our Rooms</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{% url 'testimonials' %}" aria-label="Link to Testimonials Page">Testimonials</a>
+                        <a class="nav-link" href="{% url 'home' %}#testimonials" aria-label="Link to Testimonials Section">Testimonials</a>
                     </li>
                     <li>
                         <a class="nav-link" href="{% url 'contact' %}" aria-label="Link to Contact Us Page">Contact Us</a>
