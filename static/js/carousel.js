@@ -5,11 +5,12 @@ const nextButton = document.getElementById('next-btn');
 let currentIndex = 0;
 
 function showTestimonial(index) {
-  testimonialCard.forEach((testimonialCard, i) => {
+  debugger;
+  testimonialCard.forEach((card, i) => {
     if (i === index) {
-      testimonialCard.style.display = 'block';
+      card.style.display = 'block';
     } else {
-      testimonialCard.style.display = 'none';
+      card.style.display = 'none';
     }
   });
 }

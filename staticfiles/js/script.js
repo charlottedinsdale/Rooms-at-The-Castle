@@ -9,3 +9,7 @@ function scrollFunction() {
     document.getElementById("slogan").classList.remove("hidden");
   }
 }
+
+
+
+
