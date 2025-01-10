@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 class Testimonial(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="testimonial")
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="testimonial", blank=True)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="testimonial", blank=True, null=True)
     content = models.TextField(max_length=5000)
     image = CloudinaryField('image', blank=True)
     approved = models.BooleanField(default=False)

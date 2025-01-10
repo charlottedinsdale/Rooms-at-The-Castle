@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div class="parallax-one"></div>
@@ -17,16 +17,41 @@
 
 <section name="testimonials" id="testimonials" class="home-section">
     <h1>Testimonials</h1>
-    {% for testimonial in testimonial_list %}
+    {% for testimonial in testimonials %}
+        <div class="card testimonial-card">
             <p>{{ testimonial.user }} wrote: {{ testimonial.content }}</p>
+                    <!-- Check if the testimonial is awaiting approval -->
+                {% if not testimonial.approved and testimonial.user == user %}
+                <p>Awaiting Approval</p>
+            {% endif %}
+
+            <!-- Show the edit and delete buttons if the testimonial belongs to the logged-in user -->
+            {% if user.is_authenticated and testimonial.user == user %}
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            {% endif %}
+        </div>
     {% endfor %}
-    <a href="{% url 'testimonials' %}" class="btn main-button">
-        {% if user.is_authenticated %}
-        <p class="button-text">Write your Own Testimonial</p>
-        {% else %}
-        <p class="button-text">Sign in to Write Your Own</p>
-        {% endif %}
-    </a>
+    
+    {% if user.is_authenticated %}
+    <h3>Write your Own Testimonial:</h3>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {{ testimonial_form | crispy }}
+        <button type="submit">Submit</button>
+    </form>
+    {% else %}
+    <a href="{% url 'accounts_signup' %}" class="button-text">Sign in to Write Your Own</p>
+    {% endif %}
+    
 </section>
 
 <div class="parallax-three"></div>
@@ -40,4 +65,7 @@
 <div class="parallax-four"></div>
 
 
+{% endblock %}
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
