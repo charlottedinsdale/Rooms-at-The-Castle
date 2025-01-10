@@ -29,6 +29,7 @@ for (let button of editButtons) {
 for (let button of deleteButtons) {
   button.addEventListener("click", (e) => {
       let testimonialId = e.target.getAttribute("testimonial_id");
+      console.log('testimonial id: ', testimonialId)
       deleteConfirm.href = `delete_testimonial/${testimonialId}`;
       deleteModal.show();
   });

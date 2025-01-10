@@ -19,7 +19,8 @@
     <h1>Testimonials</h1>
     {% for testimonial in testimonials %}
         <div class="card testimonial-card">
-            <p>{{ testimonial.user }} wrote: {{ testimonial.content }}</p>
+            <span>{{ testimonial.user }} wrote: </span>
+                <div id="testimonial{{ testimonial.id }}">{{ testimonial.content }}</div>
                     <!-- Check if the testimonial is awaiting approval -->
                 {% if not testimonial.approved and testimonial.user == user %}
                 <p>Awaiting Approval</p>
@@ -27,8 +28,8 @@
 
             <!-- Show the edit and delete buttons if the testimonial belongs to the logged-in user -->
             {% if user.is_authenticated and testimonial.user == user %}
-                <button class="btn btn-edit">Edit</button>
-                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-edit" testimonial_id="{{ testimonial.id }}">Edit</button>
+                <button class="btn btn-delete" testimonial_id="{{ testimonial.id }}">Delete</button>
             {% endif %}
         </div>
     {% endfor %}
@@ -43,14 +44,30 @@
         </ul>
     {% endif %}
 
-    <form method="POST" novalidate>
+    <form id="testimonialForm" method="post" style="margin-top: 1.3em;">
         {% csrf_token %}
         {{ testimonial_form | crispy }}
-        <button type="submit">Submit</button>
+        <button type="submit" id="submitButton">Submit</button>
     </form>
     {% else %}
-    <a href="{% url 'accounts_signup' %}" class="button-text">Sign in to Write Your Own</p>
+    <a href="{% url 'account_signup' %}" class="button-text">Sign in to Write Your Own</p>
     {% endif %}
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete testimonial?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your testimonial? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
     
 </section>
 
