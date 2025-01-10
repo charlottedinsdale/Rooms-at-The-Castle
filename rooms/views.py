@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.views.generic import TemplateView
 from .models import Room, RoomAvailability
 from testimonials.models import Testimonial
 from testimonials.forms import TestimonialForm
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 # class HomePage(generic.ListView):
@@ -40,12 +41,41 @@ class HomePage(generic.ListView):
             testimonial.user = request.user
             testimonial.save()
             messages.success(request, 'Your testimonial has been submitted for approval!')
-            return redirect('home')  # Redirect to home after submission
+            return HttpResponseRedirect(reverse('home'))  # Redirect to home after submission
         else:
             messages.error(request, 'There was an error with your submission. Please try again.')
         
         # If the form is not valid, render the context with the form errors
         return self.get(request, *args, **kwargs)
+    
+def edit_testimonial(self, request, testimonial_id):
+        if request.method == "POST":
+            testimonial = get_object_or_404(Testimonial, pk=testimonial_id, user=request.user)
+            testimonial_form = TestimonialForm(data=request.POST, instance=testimonial)
+
+            if testimonial_form.is_valid() and testimonial.user == request.user:
+                testimonial = testimonial_form.save(commit=False)
+                testimonial.approved = False
+                testimonial.save()
+                messages.add_message(request, messages.SUCCESS, 'Testimonial updated and awaiting approval!')
+            else:
+                messages.add_message(request, messages.ERROR,
+                                    'Error updating testimonial!')
+
+        return HttpResponseRedirect(reverse('home'))
+
+def delete_testimonial(self, request, testimonial_id):
+        if request.method == "POST":
+            testimonial = get_object_or_404(Testimonial, pk=testimonial_id, user=request.user)
+
+            if testimonial.user == request.user:
+                testimonial.delete()
+                messages.add_message(request, messages.SUCCESS, 'Testimonial deleted!')
+            else:
+                messages.add_message(request, messages.ERROR,
+                                    'Error deleting testimonial!')
+
+        return HttpResponseRedirect(reverse('home'))
 
 class ContactPage(TemplateView):
     """
