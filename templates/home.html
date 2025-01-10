@@ -22,10 +22,6 @@
             <div class="card testimonial-card">
                 <span id="testimonial-user">{{ testimonial.user }} wrote: </span>
                     <div id="testimonial{{ testimonial.id }}" class="testimonial-content">{{ testimonial.content }}</div>
-                    <div id="carousel-navigation">
-                        <button id="prev-btn" class="carousel-btn">Prev</button>
-                        <button id="next-btn" class="carousel-btn">Next</button>
-                    </div>
                         <!-- Check if the testimonial is awaiting approval -->
                     {% if not testimonial.approved and testimonial.user == user %}
                     <p id="approval-message">Awaiting Approval</p>
@@ -38,6 +34,10 @@
                 {% endif %}
             </div>
         {% endfor %}
+    </div>
+    <div id="carousel-navigation">
+        <button id="prev-btn" class="carousel-btn">Prev</button>
+        <button id="next-btn" class="carousel-btn">Next</button>
     </div>
     
     {% if user.is_authenticated %}
