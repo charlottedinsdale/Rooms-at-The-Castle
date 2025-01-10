@@ -148,6 +148,37 @@ i:hover {
     background-color: rgba(199, 223, 186, 0.95);
 }
 
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+  
+.testimonial-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}  
+  
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+}
+  
+.prev-btn, .next-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
 .testimonial-card {
     padding: 15px;
     background-color:#fafafa;

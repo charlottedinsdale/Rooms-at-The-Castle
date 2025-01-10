@@ -15,24 +15,30 @@
 
 <div class="parallax-two"></div>
 
-<section name="testimonials" id="testimonials" class="home-section">
-    <h1>Testimonials</h1>
-    {% for testimonial in testimonials %}
-        <div class="card testimonial-card">
-            <span id="testimonial-user">{{ testimonial.user }} wrote: </span>
-                <div id="testimonial{{ testimonial.id }}" class="testimonial-content">{{ testimonial.content }}</div>
-                    <!-- Check if the testimonial is awaiting approval -->
-                {% if not testimonial.approved and testimonial.user == user %}
-                <p id="approval-message">Awaiting Approval</p>
-            {% endif %}
+<section name="testimonials" id="testimonials" class="home-section carousel-container">
+    <div class="testimonial-carousel">
+        <h1>Testimonials</h1>
+        {% for testimonial in testimonials %}
+            <div class="card testimonial-card">
+                <span id="testimonial-user">{{ testimonial.user }} wrote: </span>
+                    <div id="testimonial{{ testimonial.id }}" class="testimonial-content">{{ testimonial.content }}</div>
+                    <div id="carousel-navigation">
+                        <button id="prev-btn" class="carousel-btn">Prev</button>
+                        <button id="next-btn" class="carousel-btn">Next</button>
+                    </div>
+                        <!-- Check if the testimonial is awaiting approval -->
+                    {% if not testimonial.approved and testimonial.user == user %}
+                    <p id="approval-message">Awaiting Approval</p>
+                {% endif %}
 
-            <!-- Show the edit and delete buttons if the testimonial belongs to the logged-in user -->
-            {% if user.is_authenticated and testimonial.user == user %}
-                <button class="btn btn-edit" testimonial_id="{{ testimonial.id }}">Edit</button>
-                <button class="btn btn-delete" testimonial_id="{{ testimonial.id }}">Delete</button>
-            {% endif %}
-        </div>
-    {% endfor %}
+                <!-- Show the edit and delete buttons if the testimonial belongs to the logged-in user -->
+                {% if user.is_authenticated and testimonial.user == user %}
+                    <button class="btn btn-edit" testimonial_id="{{ testimonial.id }}">Edit</button>
+                    <button class="btn btn-delete" testimonial_id="{{ testimonial.id }}">Delete</button>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
     
     {% if user.is_authenticated %}
     <h3>Write your Own Testimonial:</h3>
