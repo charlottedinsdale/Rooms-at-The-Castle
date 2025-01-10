@@ -19,11 +19,11 @@
     <h1>Testimonials</h1>
     {% for testimonial in testimonials %}
         <div class="card testimonial-card">
-            <span>{{ testimonial.user }} wrote: </span>
-                <div id="testimonial{{ testimonial.id }}">{{ testimonial.content }}</div>
+            <span id="testimonial-user">{{ testimonial.user }} wrote: </span>
+                <div id="testimonial{{ testimonial.id }}" class="testimonial-content">{{ testimonial.content }}</div>
                     <!-- Check if the testimonial is awaiting approval -->
                 {% if not testimonial.approved and testimonial.user == user %}
-                <p>Awaiting Approval</p>
+                <p id="approval-message">Awaiting Approval</p>
             {% endif %}
 
             <!-- Show the edit and delete buttons if the testimonial belongs to the logged-in user -->

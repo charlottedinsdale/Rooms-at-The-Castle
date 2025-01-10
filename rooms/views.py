@@ -64,18 +64,19 @@ def edit_testimonial(self, request, testimonial_id):
 
         return HttpResponseRedirect(reverse('home'))
 
-def delete_testimonial(self, request, testimonial_id):
-        if request.method == "POST":
-            testimonial = get_object_or_404(Testimonial, pk=testimonial_id, user=request.user)
+def delete_testimonial(request, testimonial_id):
+        
+    testimonial = get_object_or_404(Testimonial, pk=testimonial_id, user=request.user)
 
-            if testimonial.user == request.user:
-                testimonial.delete()
-                messages.add_message(request, messages.SUCCESS, 'Testimonial deleted!')
-            else:
-                messages.add_message(request, messages.ERROR,
-                                    'Error deleting testimonial!')
+    if testimonial.user == request.user:
+        testimonial.delete()
+        print('deleted testimonial')
+        messages.add_message(request, messages.SUCCESS, 'Testimonial deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'Error deleting testimonial!')
+        print('deletion  failed')
 
-        return HttpResponseRedirect(reverse('home'))
+    return HttpResponseRedirect(reverse('home'))
 
 class ContactPage(TemplateView):
     """

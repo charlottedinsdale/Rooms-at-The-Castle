@@ -115,38 +115,66 @@ i:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
-  .parallax-two {
+.parallax-two {
     background-image: url("../images/castle-bar.jpg");
     min-height: 500px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
-  .parallax-three {
+.parallax-three {
     background-image: url("../images/castle-with-daffodils.jpg");
     min-height: 500px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
-  .parallax-four {
+.parallax-four {
     background-image: url("../images/castle-garden.jpg");
     min-height: 500px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
-  .home-section {
+.home-section {
     background-color: rgba(199, 223, 186, 0.95);
-  }
+}
+
+.testimonial-card {
+    padding: 15px;
+    background-color:#fafafa;
+    color: black;
+}
+
+#testimonial-user {
+    color: darkslategray;
+}
+
+.testimonial-content {
+    text-align: center;
+}
+
+#approval-message {
+    color: darkblue;
+}
+
+.btn-edit, .btn-delete {
+    background-color: #fafafa;
+    color: grey;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    background-color: grey;
+    color: #fafafa;
+}
 
 /* ------------------ Rooms Pages */
 .room-img {
