@@ -10,6 +10,6 @@ function scrollFunction() {
   }
 }
 
-
+const homeSection = document.getElementsByClassName('home-section')
 
 
