@@ -9,3 +9,19 @@ function scrollFunction() {
     document.getElementById("slogan").classList.remove("hidden");
   }
 }
+
+const testimonialCard = document.querySelectorAll('.testimonial-card');
+const prevButton = document.getElementById('prev-btn');
+const nextButton = document.getElementById('next-btn');
+
+let currentIndex = 0;
+
+function showTestimonial(index) {
+  testimonialCard.forEach((testimonialCard, i) => {
+    if (i === index) {
+      testimonialCard.style.display = 'block';
+    } else {
+      testimonialCard.style.display = 'none';
+    }
+  });
+}
