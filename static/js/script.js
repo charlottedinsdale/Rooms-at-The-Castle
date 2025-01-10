@@ -10,12 +10,6 @@ function scrollFunction() {
   }
 }
 
-const testimonialCard = document.querySelectorAll('.testimonial-card');
-const prevButton = document.getElementById('prev-btn');
-const nextButton = document.getElementById('next-btn');
-
-let currentIndex = 0;
-
 function showTestimonial(index) {
   testimonialCard.forEach((testimonialCard, i) => {
     if (i === index) {
@@ -25,3 +19,11 @@ function showTestimonial(index) {
     }
   });
 }
+
+let currentIndex = 0;
+
+const testimonialCard = document.querySelectorAll('.testimonial-card');
+const prevButton = document.getElementById('prev-btn');
+const nextButton = document.getElementById('next-btn');
+
+
