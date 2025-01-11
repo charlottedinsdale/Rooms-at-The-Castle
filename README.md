@@ -2,6 +2,9 @@
 
 Rooms at The Castle is a room booking website designed to advertise rooms in a pub in the Devonshire countryside to potential customers. Customers are able to learn about the pub's location and history as well as view the individual rooms on offer. Testimonials written by authorised user's are visible on the homepage and can be edited and deleted by users if they wish. In order to make a booking the user must sign up to the website, after which they can book through an interactive calendar. 
 
+*Disclaimer*
+The project was developed for eductional purposes as part of my studies at the Code Institute. Whilst it is based on a real-life place with potential for real application in the future, it has also been designed to meet assessment critrea and demonstrate my capabilities as a Full-Stack Software Developer. Therefore the project conatins a mix of real images and content alonside stock images and 'made-up' content. 
+
 ## Project Goals
 
 Design and build an engaging and straight-forward website advertising The Castle to potential guests.
@@ -74,6 +77,7 @@ Similarly to the ERD, wireframes were designed in the project ideation phase and
 - img
 ## Colour Scheme
 - img
+
 # Database Schemas
 
 ## Entity-relationship-model (ERD)
@@ -159,7 +163,33 @@ List taken from requirements.txt file in project.
 
 ## Existing Features 
 
+### Django Admin Page
+
+The Django superuser (page administrator) can access a customised Django admin page where they can view, edit and delete Bookings, Room Availability status', Testimonials and Rooms. They also have the ability to approve a testimonial before it is posted to the website. 
+
+### Home Page
+
+The home page features a fully-responsive navbar and header, as well as and 'About' section, 'Testimonials' section, a Google Calendar iframe and footer containing contact information. The home page features three images between the sections which create a parallax scrolling effect, and the header shrinks on scrolling. 
+
+### Testimonials
+
+Within the home page is a testimonial section containing user-written testimonials shown in a carousel, as well as a testimonial form for authorised users to submit their own testimonial if they wish. Autherised users can also edit and delete their own testimoials.
+
+### Room Pages
+
+The 'Rooms' page features a list of all rooms on the database, showing an image of the room, the room capacity, number of beds and price per night. Users can then click on individual rooms and view the room in detail, where they can see a description of the room and click on the 'book now' button to make a booking.
+
+### Booking Page
+
+Once user's have selected a room to book, they are taken to the 'Booking Page' where they can choose the number of guests and select a start and end date from a calendar. The calendar fetches Room Availabity data to dynamically display available and unavailable dates (which users cannot select) to the user. A modal appears once the date selection has been made so that users can confirm their selection before submitting the booking. The total booking price is shown to the user before they submit the booking form. Once the form is submitted the user is shown a booking confirmation, with their booking reference and a summary of the booking.
+
 ## Features to Implement in Future 
+
+The Contact Page, including user contact form and admin email reply feature will be implemented for the next release. This will allow users to ask questions about The Castle and its rooms to help them decide on aspects of their booking and will allow the owners to recieve feedback from users. This would likely also lead to the addition of an FAQs section as laid out in the Contact Page wireframe.
+
+There will also be a 'Manage Bookings' page where authorised users can manage their current bookings and view details for previous bookings. This will allow users to request cancellations or updates to their stay period or number of guests etc.
+
+There will also be an addition to the Testimonials section, where authorised users can chose to view only their own testimonials from the carousel, so that when there is more data, the user can filter out their own testimonials more easily in order to edit or delete them as they please.
 
 # Testing
 
@@ -167,13 +197,27 @@ List taken from requirements.txt file in project.
 
 ## Manual Testing
 
-## Bugs 
+# Reflection on Development Process
 
-### Unfixed Bugs
+## Successes
+
+## Challenges
+
+### Bugs 
 
 # Deployment
 
-Webiste was deployed regularly to Heroku for testing. The final live site is deployed to Heroku and available for viewing here: https://the-castle-fe36c8bb2ab4.herokuapp.com/.
+Webiste was deployed regularly to Heroku for testing. The following steps were taken before initial deployment:
+-
+-
+-
+
+The following steps were taken before each subsequent deployment:
+-
+-
+-
+
+The final live site is deployed to Heroku and available for viewing here: https://the-castle-fe36c8bb2ab4.herokuapp.com/.
 
 # Sources
 
@@ -181,6 +225,7 @@ Webiste was deployed regularly to Heroku for testing. The final live site is dep
 - Freepik for generic room images
 - FullCalendar for JavaScript calendar and documentation
 - chatGPT for project ideation prompting, room descriptions and code troubleshooting
+- Google Maps for map iframe
 - The Castle Hotel for homepage images and address 
 
 # Acknowledgements
