@@ -31,11 +31,19 @@ All user stories along with their acceptance criterea and status in the project 
 # Design
 ## Look and Feel
 
-The website has a professional and intuative design as it's purpose is to advertise The Castle for potential guests. The images and colourscheme chosen show both the inside and outside of The Castle and the colourscheme reflects the peaceful countyside within which the Castle sits.
+The website has a professional and intuative design as it's purpose is to advertise The Castle for potential guests. The images and colourscheme chosen show both the inside and outside of The Castle and the colourscheme reflects the peaceful countyside within which the Castle sits. The image below is taken from the homepage, the first part of the website the user would see.
+
+![Screenshot 2025-01-11 152309](https://github.com/user-attachments/assets/7ff31699-6851-4bab-a8ff-0ed62c71e9d2)
 
 ## Colourscheme
 
 The design is intended to be simple and appealing, which is why a  muted green colourscheme was chosen. The colourscheme is also inspired by the Devon flag and reflects the colour of the pub itself.
+
+The main Colourscheme:
+![Colourscheme](https://github.com/user-attachments/assets/9dc9417f-a33a-4366-ac26-67bc034f184a)
+
+The Devon Flag for reference:
+![Devon Flag](https://github.com/user-attachments/assets/bb5e8fea-0f0d-4f3a-bb29-f339cb8ee132)
 
 ## Typography
 
