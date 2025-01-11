@@ -53,9 +53,10 @@ Two fonts were chosen for the website, both imported from google fonts. The <a h
 
 ## Favicon/Logo
 
-I designed a favicon/logo for The Castle with the aim to create a simple, easily-identifiable logo that represented the brand and looked good on browsers in both light and dark mode. I based the design on the medieval castle image on the signage for the pub.
+I designed a favicon/logo for The Castle with the aim to create a simple, easily-identifiable logo that represented the brand and looked good on browsers in both light and dark mode. I based the design on the medieval castle image on the signage for the pub. Below is the Favicon (left) and The Castle signage (right).
 
-![castle-logo](https://github.com/user-attachments/assets/202f0923-042d-45d6-94fc-4a41cdc39c63)
+![castle-logo](https://github.com/user-attachments/assets/202f0923-042d-45d6-94fc-4a41cdc39c63) ![Castle Signage](https://github.com/user-attachments/assets/ae60c9d2-e0bf-42f6-90b4-d99813f1b783)
+
 
 ## Wireframes
 
