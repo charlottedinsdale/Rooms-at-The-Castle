@@ -58,21 +58,42 @@ Two fonts were chosen for the website, both imported from google fonts. The <a h
 # Database Schemas
 
 ## Entity-relationship-model (ERD)
-- img
+
+Initial entity-relationship diagram was created at the very beginning of the project. <strong>Note that the 'Review' model was renamed to 'Testimonial' during development.</strong>
+
+![ERD](https://github.com/user-attachments/assets/6591e80c-ed52-4a5e-b004-b392d6ba0d21)
+
 ## Models
 
 ### User Model
-- table
+
+The Django User model was used, but I included a model in the ERD in order to ensure all relationships were documented and excecuted correctly.
+
+![User Model](https://github.com/user-attachments/assets/1973b6f9-b80d-4c72-9bcd-38ea8cf55738)
+
 ### Room Model
-- table
+
+![Room Model](https://github.com/user-attachments/assets/9ec71ccd-e841-4675-a232-7c0619b78599)
+
 ### Room Availability Model
-- table
-### Bookings Model
-- table
+
+![Room Availability Model](https://github.com/user-attachments/assets/7b5b5428-079a-4b26-a3db-6cc39fe6912d)
+
+### Booking Model
+
+![Booking Model](https://github.com/user-attachments/assets/d8fc26b3-cb66-4519-9c9b-711800355016)
+
 ### Contact Form Model
-- table
-### Reviews Model
-- table
+
+This model has not yet been implemented and is intended for future release.
+
+![Contact Form Model](https://github.com/user-attachments/assets/b6163e8a-078c-4515-a1d2-a53dfb931e09)
+
+### Testimonial (formerly Review) Model
+
+Note that the rating field was not included in the final model and an image field was included instead, along with an approved field. Whilst the image field was included in the model for first release, it is yet to be included in the user form and is intended for a future release.
+
+![Testimonial Model](https://github.com/user-attachments/assets/758bdadd-fcac-42fc-880b-890b755bb6f3)
 
 # Technologies Used
 
@@ -82,9 +103,37 @@ The site was developed using a Django framework, with Python being the primary b
 
 ### Languages and Frameworks
 
-### Django Packages
+- Python
+- JavaScript
+- HTML5
+- CSS3
+- Django
+- Bootstrap
 
-### Other Teachnologies
+### Django Packages and Other Teachnologies
+
+List taken from requirements.txt file in project.
+
+- asgiref==3.8.1
+- cloudinary==1.36.0
+- crispy-bootstrap5==0.7
+- dj-database-url==0.5.0
+- dj3-cloudinary-storage==0.0.6
+- Django==4.2.17
+- django-allauth==65.3.0
+- django-crispy-forms==2.3
+- django-summernote==0.8.20.0
+- gunicorn==20.1.0
+- pillow==11.0.0
+- psycopg2==2.9.10
+- sqlparse==0.5.3
+- urllib3==1.26.20
+- whitenoise==5.3.0
+
+### Other Technologies
+
+- SmartDraw was used to create the ERD
+- Balsamiq was used to design the wireframes
 
 # Features 
 
@@ -110,7 +159,9 @@ Webiste was deployed regularly to Heroku for testing. The final live site is dep
 
 - W3 Schools for parallax code
 - Freepik for generic room images
-- FullCalendar for JavaScript calendar and documentation 
+- FullCalendar for JavaScript calendar and documentation
+- chatGPT for project ideation prompting, room descriptions and code troubleshooting
+- The Castle Hotel for homepage images and address 
 
 # Acknowledgements
 
