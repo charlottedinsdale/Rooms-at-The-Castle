@@ -16,6 +16,8 @@ The target audience for the website is broad, targetting any member of the publu
 
 # Epics and User Stories
 
+Epics and user stories were developed in the early stages of the project and prioritised in the workflow using MosCow Prioritisation. I used GitHub's project feature to track development using a Kanban board; moving the user stories into relevant sections as development progressed and labelling with priority tags (Must Have, Should Have, Could Have).
+
 All user stories along with their acceptance criterea and status in the project can be viewed <a href="https://github.com/users/charlottedinsdale/projects/4/views/1" target="_blank">here</a> on the project board.
 
 ## Epics
@@ -49,7 +51,15 @@ The Devon Flag for reference:
 
 Two fonts were chosen for the website, both imported from google fonts. The <a href="https://fonts.google.com/specimen/Cinzel" target="_blank">Cinzel</a> typeface was chosen for the title and other headings as it is similar to the typeface used on The Castle building itself, and reminds the user that The Castle is a traditional English pub with a long history. A contrasting sans-serif font; <a href="https://fonts.google.com/specimen/Ysabeau+Office" target="_blank">Ysabeau Office</a> was used or the main body text as it is easier to read in smaller text and has a professional but friendly feel.
 
+## Favicon/Logo
+
+I designed a favicon/logo for The Castle with the aim to create a simple, easily-identifiable logo that represented the brand and looked good on browsers in both light and dark mode. I based the design on the medieval castle image on the signage for the pub.
+
+![castle-logo](https://github.com/user-attachments/assets/202f0923-042d-45d6-94fc-4a41cdc39c63)
+
 ## Wireframes
+
+Similarly to the ERD, wireframes were designed in the project ideation phase and modifications were made to the design and layout later in the project develpment. Key features in the deployed website such as the header, footer and page layout are very similar to the wireframes, but other features differ. The contact page has not been included in the first release due to time constraints and prioritisation, but is intended for a later release.
 
 ### Homepage
 - img
@@ -140,8 +150,9 @@ List taken from requirements.txt file in project.
 
 ### Other Technologies
 
-- SmartDraw was used to create the ERD
-- Balsamiq was used to design the wireframes
+- SmartDraw to create the ERD
+- Balsamiq to design the wireframes
+- PowerPoint to design Favicon/Logo
 
 # Features 
 
