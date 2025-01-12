@@ -4,6 +4,10 @@ body {
     background-color: rgb(2, 75, 42);
 }
 
+h1 {
+    font-family: 'Cinzel', serif;
+}
+
 a {
     color: #fafafa;
     text-decoration: none;
@@ -22,7 +26,7 @@ i {
 }
 
 i:hover {
-    color: #06b7a8;
+    color: rgb(199, 223, 186);
 }
 
 .main-button {
@@ -32,7 +36,7 @@ i:hover {
 .card {
     border-radius: 20px;
     overflow: hidden;
-    background-color: rgba(199, 223, 186, 0.95);
+    background-color: rgba(199, 223, 186);
 }
 
 /* ------------------- Header ---------------------- */
@@ -145,7 +149,7 @@ i:hover {
 }
 
 .home-section {
-    background-color: rgba(199, 223, 186, 0.95);
+    background-color: rgba(199, 223, 186);
 }
 
 .carousel-container {
@@ -162,14 +166,17 @@ i:hover {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    background-color: rgb(199, 223, 186);
+    width: 100%;
 }  
   
-.carousel-navigation {
+#carousel-navigation {
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
 }
   
-.prev-btn, .next-btn {
+#prev-btn, #next-btn {
     padding: 10px 20px;
     margin: 0 10px;
     font-size: 16px;
@@ -183,6 +190,7 @@ i:hover {
     padding: 15px;
     background-color:#fafafa;
     color: black;
+    min-height: 125px;
 }
 
 #testimonial-user {
@@ -191,6 +199,7 @@ i:hover {
 
 .testimonial-content {
     text-align: center;
+    font-size: larger;
 }
 
 #approval-message {
@@ -205,6 +214,42 @@ i:hover {
 .btn-edit:hover, .btn-delete:hover {
     background-color: grey;
     color: #fafafa;
+}
+
+.testimonial-form-container {
+    background-color: rgba(199, 223, 186);
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+    #testimonialForm {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+}
+
+/* ------------- Map Section ----- */
+#map-section {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: auto;            
+}
+  
+#map {
+    display: flex;
+    justify-content: center;
+    width: 100%;  
+    min-height: 500px;
+    padding: 40px 10px;
+}
+  
+iframe {
+    max-width: 100%;         
+    height: auto;
 }
 
 /* ------------------ Rooms Pages */
