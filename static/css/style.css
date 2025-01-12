@@ -4,7 +4,7 @@ body {
     background-color: rgb(2, 75, 42);
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
     font-family: 'Cinzel', serif;
 }
 
@@ -30,7 +30,7 @@ i:hover {
 }
 
 .main-button {
-    background-color: #14460AB3;
+    background-color: #013b1b;
 }
 
 .card {
@@ -150,8 +150,27 @@ i:hover {
 
 .home-section {
     background-color: rgba(199, 223, 186);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* ------------- About Section ----- */
+
+#about {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.about-text {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+
+/* ------------- Testimonials Section ----- */
 .carousel-container {
     display: flex;
     flex-direction: column;
@@ -166,6 +185,7 @@ i:hover {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    padding-top: 15px;
     background-color: rgb(199, 223, 186);
     width: 100%;
 }  

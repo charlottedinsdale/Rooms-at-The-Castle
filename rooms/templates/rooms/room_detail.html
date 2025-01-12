@@ -2,17 +2,22 @@
 {% block content %}
 {% load static %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
+<div class="card">
+</div>
+        
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4 mt-3">
+            <div class="card-body">
                 <h1 class="room-title">{{ room.name }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="room-subtitle">Up to {{ room.capacity }} guests | {{ room.number_of_beds }} bed</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+                {% if room.number_of_beds == 1 %}
+                <p class="author room-description">{{ room.number_of_beds }} bed | Up to {{ room.capacity }} guests | Ensuite | £{{ room.price_per_night }} pn</p>
+                {% else %}
+                <p class="author room-description">{{ room.number_of_beds }} beds | Up to {{ room.capacity }} guests | Ensuite | £{{ room.price_per_night }} pn</p>
+                {% endif %}
+                <div class="image-container">
+                    <img src="{% static 'images/default.jpg' %}" class="card-img" alt="placeholder">
+                </div> 
             </div>
         </div>
     </div>

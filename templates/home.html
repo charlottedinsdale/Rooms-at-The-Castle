@@ -7,9 +7,28 @@
 
 
 <section name="about" id="about" class="home-section">
-    <div class="card">
-        <h1>About Us</h1>
-        <p>Brothers Simon and Pete bought The Castle together in 2010 and have since started </p>
+    <h1>About Us</h1>
+    <h5>The Owners</h5>
+    <div class="about-text">
+        <p>Brothers Simon and Pete bought The Castle together in 2010 and have since started 
+            Having lived in the area for over a decade, they are well equipped to answer any questions
+            you may have and provide recommendations for local walks, activities and restaurants.
+        </p>
+    </div>
+    <h5>The Pub</h5>
+    <div class="about-text">
+        <p>"Grade II listed former hotel, mostly built in 1835 with a later addition at the front. Three separate rooms some with stone floors and one with a prominent carved stone fireplace enclosing a wood burning stove. It is a friendly locals town pub which supports pool and skittles teams. The guest ales can be local or national with the landlord having access to Greene King one off and seasonal brews."</p>
+        <p id="author">- Campaign for Real Ale</p>
+    </div>
+    <h5>Your Stay</h5>
+    <div class="about-text">
+        <p>All rooms on offer have been recently refurbished to the highest of standards with your 
+            comfort and safety in mind. The rooms are located in a private upstairs area above the pub, 
+            and each have their own private ensuite bathroom. Each room has a unique name inspired by
+            local beauty spots. Take a look at 
+            <a href="{% url 'rooms' %}">our rooms</a> 
+            for more information.
+        </p>
     </div>
 </section>
 
@@ -41,7 +60,7 @@
     </div>
     
     {% if user.is_authenticated %}
-    <h3>Write your Own Testimonial:</h3>
+    <h5>Write your Own Testimonial:</h5>
     {% if messages %}
         <ul>
             {% for message in messages %}
@@ -54,11 +73,11 @@
         <form id="testimonialForm" method="post" style="margin-top: 1.3em;">
             {% csrf_token %}
             {{ testimonial_form | crispy }}
-            <button type="submit" id="submitButton">Submit</button>
+            <button type="submit" id="submitButton" class="main-button">Submit</button>
         </form>
     </div>
     {% else %}
-    <a href="{% url 'account_signup' %}" class="button-text">Sign in to Write Your Own</p>
+    <a href="{% url 'account_signup' %}" class="btn main-button button-text">Sign in to Write Your Own</p>
     {% endif %}
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
