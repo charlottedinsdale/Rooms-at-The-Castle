@@ -243,23 +243,25 @@ Lighthouse performance testing was used to test performance, accesibility, best 
 
 | Feature       | Expected Behaviour | Pass/Fail |
 | ------------- | -------------      | --------- |
-| Site is fully-responsive. | Content is readable and styling is consistent on all devices and all features are functional | Pass |
-| Sign Up  | Users can easily navigate to sign up page and create a username and secure password. They are then redirected to the homepage. | Pass |
-| Sign In  | Authorised users can sign in to website by navigating to sign in page in navbar. They now are able to book rooms and submit testimonials. | Pass |
-| Sign Out  | Signed-in users can navigate to sign out page and securely sign out from site. | Pass |
-| View Rooms  | Users can easily navigate to 'Our rooms' page to view all available rooms. | Pass |
-| Select Room  | Users can navigate to individual room page by clicking on room in 'Our rooms' page to see more details including capacity and price. | Pass |
-| Make Booking  | Authorised users can click 'Book Room' on room page and select dates and number of dates from calendar. They will see a confirmation after booking | Pass |
-| Submit Testimonial  | Authorised users can write a testimonial and submit for approval to the admin. | Pass |
-| View Testimonials  | Content Cell       | Pass |
-| Delete Testimonial  | Content Cell       | Pass |
-| Edit Testimonial  | Content Cell       | Pass |
-| Manage Rooms on Admin Panel  | Content Cell       | Pass |
-| View Users on Admin Panel  | Content Cell       | Pass |
-| Manage Bookings on Admin Panel  | Content Cell       | Pass |
-| View Room Availability on Admin Panel  | Content Cell       | Pass |
-| Block Rooms on Admin Panel  | Content Cell       | Pass |
-| Approve Testimonials on Admin Panel  | Content Cell       | Pass |
+| Header title links to homepage | On click, users are redirected to homepage | Pass |
+| Sign Up button | After entering username and secure password on click redirects to homepage  | Pass |
+| Sign In button  | After entering valid credentials users are signed in and redirected to homepage. | Pass |
+| Sign Out button  | Signed-in users click and are signed out and redirected to homepage. | Pass |
+| Navbar headings  | On click users are navigated to 'Our rooms', 'About', 'Testimonials', 'Sign In/Up/Out' | Pass (except for 'Contact Us' - see features) |
+| Book Your Stay button  | On click navigated to 'Our rooms' page. | Pass |
+| Find Us button  | On click navigates to map section. | Pass |
+| Full Address button  | On click navigates to footer. | Pass |
+| Testimonial Carousel | On click of arrow buttons, cycles though testimonials. | Pass |
+| Edit Testimonial button | Appears only on testimonials that user has authored, on click populates form with testimonial content and displays update button. | Pass |
+| Update Testimonial button | On click sends new testimonial to be approved, deletes old testimonial and displays success message. | Pass |
+| Delete Testimonial button |  Appears only on testimonials that user has authored, on click displays confirmation modal, deletes testimonial and displays success message.  | Pass |
+| Testimonial Form  | Only displays for authorised users, POSTed for approval once filled out and 'awaiting approval' message displayed on submission. | Pass |
+| Room Cards | On click redirects to individual room page. | Pass |
+| Book Now button | On click redirects to booking page for specified room. | Pass |
+| Date selction calendar | Displays availability data, on click selects start and end date then 'Are you sure?' modal. | Pass |
+| Number of Guests Dropdown | Allows selection of min 1 and max room capacity. | Pass |
+| Submit booking button | Appears only after date selction and redirects to booking confirmation page. | Pass |
+| Return Home button | Redirects to homepage | Pass |
 
 ### Account Creation
 
