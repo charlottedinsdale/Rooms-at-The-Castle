@@ -11,4 +11,3 @@ class RoomAdmin(SummernoteModelAdmin):
     summernote_fields = ('description',)
 
 admin.site.register(RoomAvailability)
-

@@ -9,4 +9,3 @@ urlpatterns = [
     path('delete_testimonial/<int:testimonial_id>', views.delete_testimonial, name='testimonial_delete'),
     path('<slug:slug>/', views.room_detail, name='room_detail'),
 ]
-    
