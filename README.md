@@ -222,7 +222,9 @@ A method for taking payments would be implemented should the site be used in the
 
 ### Performance Testing
 Lighthouse performance testing was used to test performance, accesibility, best practices and SEO on the deployed site. Initial performance testing highlighted a major hinderence due the size of the main homepage image and due to unused JavaScript largely attributed to FullCalendar. Below is a comparison between the performance rating before compressing the key image and after. I will look to optimise further by cutting down on unused JavaScript for future releases.
-![Lighthouse Testing before Compression](https://github.com/user-attachments/assets/26cb1360-0012-48c1-b5a1-631b1c53fa6e) ![Lighthouse Testing after Compression](https://github.com/user-attachments/assets/bc9d9d4c-396e-4ff6-a14e-480d1348a088)
+
+
+![Lighthouse Testing before Compression](https://github.com/user-attachments/assets/26cb1360-0012-48c1-b5a1-631b1c53fa6e)![Lighthouse Testing after Compression](https://github.com/user-attachments/assets/bc9d9d4c-396e-4ff6-a14e-480d1348a088)
 
 ## Manual Testing
 
