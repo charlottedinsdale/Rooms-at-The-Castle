@@ -295,6 +295,10 @@ iframe {
     overflow: hidden;
 }
 
+.room-card-text {
+    color:rgb(2, 75, 42);
+}
+
 /* ------------------ Accounts Pages */
 .login-container {
     min-height: 100vh;
