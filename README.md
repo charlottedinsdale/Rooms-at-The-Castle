@@ -183,6 +183,14 @@ The 'Rooms' page features a list of all rooms on the database, showing an image 
 
 Once user's have selected a room to book, they are taken to the 'Booking Page' where they can choose the number of guests and select a start and end date from a calendar. The calendar fetches Room Availabity data to dynamically display available and unavailable dates (which users cannot select) to the user. A modal appears once the date selection has been made so that users can confirm their selection before submitting the booking. The total booking price is shown to the user before they submit the booking form. Once the form is submitted the user is shown a booking confirmation, with their booking reference and a summary of the booking.
 
+## Future Improvements
+
+Due to the time constraints of the project and issues arising during development that weren't factored into the initial planning and prioritisation phases, there are some features that I would have liked to have improved on and certainly will for future updates. These include:
+
+- notifications on the admin panel when a testimonial has been edited by adding an updated_on field to the Testimonial model
+- better Calendar UX and checks to ensure that end_date cannot be before start_date and bookings cannot be made for dates in the past
+- 
+
 ## Features to Implement in Future 
 
 The Contact Page, including user contact form and admin email reply feature will be implemented for the next release. This will allow users to ask questions about The Castle and its rooms to help them decide on aspects of their booking and will allow the owners to recieve feedback from users. This would likely also lead to the addition of an FAQs section as laid out in the Contact Page wireframe.
@@ -207,15 +215,20 @@ There will also be an addition to the Testimonials section, where authorised use
 
 # Deployment
 
-Webiste was deployed regularly to Heroku for testing. The following steps were taken before initial deployment:
--
--
--
+The site was regularly deployed to Heroku in the development stages. The following steps were taken before initial deployment:
+- Django project and first app 'rooms' were set up 
+- env.py created, and DATABASE_URL and SECRET_KEY were added and linked to settings.py in project
+- env.py added to gitignore to ensure secruity of DATABASE_URL and SECRET_KEY
+- gunicorn installed and added to requirements.txt by running "pip3 requirements freeze --local" after installment
+- Procfile created and "web: gunicorn the_castle.wsgi" added so Heroku knows how to run project
+- App created in Heroku and linked to GitHub repository
+- DATABASE_URL and SECRET_KEY added to CONFIG VARS in the app settings
+- Debug set to False before deployment
 
 The following steps were taken before each subsequent deployment:
--
--
--
+- Debug set to False
+- Any new packages installed added to requirements.txt
+- Any changes were commited to GitHub
 
 The final live site is deployed to Heroku and available for viewing here: https://the-castle-fe36c8bb2ab4.herokuapp.com/.
 
@@ -230,6 +243,6 @@ The final live site is deployed to Heroku and available for viewing here: https:
 
 # Acknowledgements
 
-Thank you to all the teaching staff at the Code Institute, especially Kevin for his help getting the calendar functionality in place, Paul for the constant motivation and feedback and the Coding Coaches for their help with bugs.
+Thank you to all the teaching staff at the Code Institute, especially Kevin for his help getting the calendar functionality in place, John and the rest of the Coding Coaches for their help with bugs and Paul for his constant motivation and feedback.
 
 
