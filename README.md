@@ -243,22 +243,23 @@ Lighthouse performance testing was used to test performance, accesibility, best 
 
 | Feature       | Expected Behaviour | Pass/Fail |
 | ------------- | -------------      | --------- |
-| Sign Up  | Users can sign up to the website by creating a username and secure password. They are then redirected to the homepage. | Pass |
-| Sign In  | Content Cell       |           |
-| Sign Out  | Content Cell       |           |
-| View Rooms  | Content Cell       |           |
-| Select Room  | Content Cell       |           |
-| Make Booking  | Content Cell       |           |
-| Submit Testimonial  | Content Cell       |           |
-| View Testimonials  | Content Cell       |           |
-| Delete Testimonial  | Content Cell       |           |
-| Edit Testimonial  | Content Cell       |           |
-| Manage Rooms on Admin Panel  | Content Cell       |           |
-| View Users on Admin Panel  | Content Cell       |           |
-| Manage Bookings on Admin Panel  | Content Cell       |           |
-| View Room Availability on Admin Panel  | Content Cell       |           |
-| Block Rooms on Admin Panel  | Content Cell       |           |
-| Approve Testimonials on Admin Panel  | Content Cell       |           |
+| Site is fully-responsive. | Content is readable and styling is consistent on all devices and all features are functional | Pass |
+| Sign Up  | Users can easily navigate to sign up page and create a username and secure password. They are then redirected to the homepage. | Pass |
+| Sign In  | Authorised users can sign in to website by navigating to sign in page in navbar. They now are able to book rooms and submit testimonials. | Pass |
+| Sign Out  | Signed-in users can navigate to sign out page and securely sign out from site. | Pass |
+| View Rooms  | Users can easily navigate to 'Our rooms' page to view all available rooms. | Pass |
+| Select Room  | Users can navigate to individual room page by clicking on room in 'Our rooms' page to see more details including capacity and price. | Pass |
+| Make Booking  | Authorised users can click 'Book Room' on room page and select dates and number of dates from calendar. They will see a confirmation after booking | Pass |
+| Submit Testimonial  | Authorised users can write a testimonial and submit for approval to the admin. | Pass |
+| View Testimonials  | Content Cell       | Pass |
+| Delete Testimonial  | Content Cell       | Pass |
+| Edit Testimonial  | Content Cell       | Pass |
+| Manage Rooms on Admin Panel  | Content Cell       | Pass |
+| View Users on Admin Panel  | Content Cell       | Pass |
+| Manage Bookings on Admin Panel  | Content Cell       | Pass |
+| View Room Availability on Admin Panel  | Content Cell       | Pass |
+| Block Rooms on Admin Panel  | Content Cell       | Pass |
+| Approve Testimonials on Admin Panel  | Content Cell       | Pass |
 
 ### Account Creation
 
