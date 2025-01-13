@@ -2,6 +2,9 @@
 
 Rooms at The Castle is a room booking website designed to advertise rooms in a pub in the Devonshire countryside to potential customers. Customers are able to learn about the pub's location and history as well as view the individual rooms on offer. Testimonials written by authorised user's are visible on the homepage and can be edited and deleted by users if they wish. In order to make a booking the user must sign up to the website, after which they can book through an interactive calendar. 
 
+![Screenshot 2025-01-13 140953](https://github.com/user-attachments/assets/0aafcf12-ae94-4d6d-8d77-a5bdde001a44)
+
+
 *Disclaimer*
 The project was developed for eductional purposes as part of my studies at the Code Institute. Whilst it is based on a real-life place with potential for real application in the future, it has also been designed to meet assessment critrea and demonstrate my capabilities as a Full-Stack Software Developer. Therefore the project conatins a mix of real images and content alonside stock images and 'made-up' content. 
 
@@ -17,21 +20,23 @@ Ensure that the user can create, edit, read and delete testimonials in order to 
 
 The target audience for the website is broad, targetting any member of the publuc looking to stay somewhere in Devon - whether for business or pleasure. The rooms are advertised to suit a variety of guests - from single guests to couples to families.
 
-# Epics and User Stories
+# User Stories
 
-Epics and user stories were developed in the early stages of the project and prioritised in the workflow using MosCow Prioritisation. I used GitHub's project feature to track development using a Kanban board; moving the user stories into relevant sections as development progressed and labelling with priority tags (Must Have, Should Have, Could Have).
+User stories were developed in the early stages of the project and prioritised in the workflow using MosCow Prioritisation. I used GitHub's project feature to track development using a Kanban board; moving the user stories into relevant sections as development progressed and labelling with priority tags (Must Have, Should Have, Could Have).
 
+Below are some example titles of user stories that were created for this project.
 All user stories along with their acceptance criterea and status in the project can be viewed <a href="https://github.com/users/charlottedinsdale/projects/4/views/1" target="_blank">here</a> on the project board.
 
-## Epics
-- 
--
--
-
 ## User Stories
--
--
--
+- Create an account
+- View rooms 
+- Book rooms
+- Admin add rooms
+- Admin view bookings
+- Write tetimonials
+- Edit or delete testimonials
+- Edit or delete testimonials
+- Submit a contact form
 
 # Design
 ## Look and Feel
@@ -69,11 +74,11 @@ Similarly to the ERD, wireframes were designed in the project ideation phase and
 ### Home and About
 ![Screenshot 2025-01-11 142410](https://github.com/user-attachments/assets/c169c814-5025-4db9-9bea-923053519812)
 
-### Contact
-![Screenshot 2025-01-11 142447](https://github.com/user-attachments/assets/4f94f9d4-f761-4b7a-b2f9-9492187dd813)
-
-### Bookings
+### Rooms, Booking and Contact
 ![Screenshot 2025-01-11 142440](https://github.com/user-attachments/assets/55024d74-254f-4a12-ba37-fc6d35d7b4da)
+
+### Booking Confirmation
+![Screenshot 2025-01-11 142447](https://github.com/user-attachments/assets/4f94f9d4-f761-4b7a-b2f9-9492187dd813)
 
 ### Mobile Wireframes
 ![Screenshot 2025-01-11 142401](https://github.com/user-attachments/assets/1d7b7c54-1ad3-4f0d-ac0e-b4fa2bf2fcf4)
@@ -159,6 +164,7 @@ List taken from requirements.txt file in project.
 - SmartDraw to create the ERD
 - Balsamiq to design the wireframes
 - PowerPoint to design Favicon/Logo
+- Am I Responisve? for responsiveness testing and feature image
 
 # Features 
 
