@@ -160,6 +160,7 @@ List taken from requirements.txt file in project.
 - sqlparse==0.5.3
 - urllib3==1.26.20
 - whitenoise==5.3.0
+- flake8
 
 ### Other Technologies
 
@@ -216,11 +217,22 @@ A method for taking payments would be implemented should the site be used in the
 
 ### HTML Validation
 
+W3C's HTML validation was used to validate HTML in the project, and some errors were highlighted relating to attributes and nesting. Some were addressed, however due to time constraints, not all errors have been addressed at this point. Some examples can be seen below.
+
+![HTML Validation](https://github.com/user-attachments/assets/2f48cff8-d708-4b1d-ad05-340456215032)
+
 ### CSS Validation
+
+CSS was also validated using W3C's validation tool and the project met CSS3 standards with no errors found.
+
+![CSS Validation](https://github.com/user-attachments/assets/a543a78d-2c79-4adf-9e26-35f770ddecf9)
 
 ### Python Linting
 
+Python linting using the Code Institute's Linter tool and Flake8 extension highlighted quite a few errors in my python code due to line length. There were a few indentation errors and whitespace errors which were corrected, however due to time constraints most line length errors were not corrected. These will be corrected for future releases and in the future I would use Flake8 to address these errors throughout development.
+
 ### Performance Testing
+
 Lighthouse performance testing was used to test performance, accesibility, best practices and SEO on the deployed site. Initial performance testing highlighted a major hinderence due the size of the main homepage image and due to unused JavaScript largely attributed to FullCalendar. Below is a comparison between the performance rating before compressing the key image and after. I will look to optimise further by cutting down on unused JavaScript for future releases.
 
 
