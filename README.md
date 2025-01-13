@@ -263,9 +263,13 @@ Lighthouse performance testing was used to test performance, accesibility, best 
 
 ## Successes
 
+As my first Full-Stack project using the Django framework I am very proud of what I've managed to produce in 3 weeks. I am particularly pleased with the implementation of a dynamic calendar for bookings, the JavaScript elements on the homepage and overall look of the site. 
+
 ## Challenges
 
-### Bugs 
+I faced quite a few challenges when implementing the dynamic calendar and linking JavaScript and Python logic in order to make the bookings and editing testimonial functions work successfully. With perserverance and practice after created mulptiple apps and models (and some help from Kevin) I was able to overcome many of the challenges faced. 
+
+A key challenge was the time constraint of the project and in the future I would look to improve on code validation and python linting at an earlier stage. Use of a project board and well planned user stories was invaluable to being able to produce the project within the assesssment period.
 
 # Deployment
 
