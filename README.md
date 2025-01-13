@@ -68,6 +68,12 @@ Similarly to the ERD, wireframes were designed in the project ideation phase and
 ### Homepage
 - img
 ### Rooms Page
+![Screenshot 2025-01-11 142447](https://github.com/user-attachments/assets/4f94f9d4-f761-4b7a-b2f9-9492187dd813)
+![Screenshot 2025-01-11 142440](https://github.com/user-attachments/assets/55024d74-254f-4a12-ba37-fc6d35d7b4da)
+![Screenshot 2025-01-11 142427](https://github.com/user-attachments/assets/ebf941c0-9715-4606-b5d6-17fbe58726d1)
+![Screenshot 2025-01-11 142410](https://github.com/user-attachments/assets/c169c814-5025-4db9-9bea-923053519812)
+![Screenshot 2025-01-11 142401](https://github.com/user-attachments/assets/1d7b7c54-1ad3-4f0d-ac0e-b4fa2bf2fcf4)
+
 - img
 ### Individual Room Page
 - img
