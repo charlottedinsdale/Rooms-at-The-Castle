@@ -328,6 +328,17 @@ iframe {
 
 /* -------------------- Booking Pages --------------*/
 
+.booking-form {
+    padding: 30px 10px 10px 80px;
+    color:#fafafa;
+}
+
+/* --------- Calendar ----------------- */
+
+#calendar {
+    background-color: #abc19f;
+}
+
 /*---- Booking Confirmation --- */
 
 #confirmation-container {
@@ -356,11 +367,4 @@ footer {
 
 #copyright {
     margin-bottom: 0;
-}
-
-
-/* ------------------- Calendar ---------------------- */
-
-#calendar {
-    background-color: #abc19f;
 }

@@ -6,10 +6,9 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
-<h1>Booking for {{ room.name }}</h1>
-
-{% if user.is_authenticated %}
+<div class="booking-form">
+    <h1>Booking for {{ room.name }}</h1>
+    {% if user.is_authenticated %}
     <form id="booking-form" method="POST" action=".">
         {% csrf_token %}
         {{ form.as_p }}
@@ -17,6 +16,7 @@
         <input type="hidden" id="end_date" name="end_date">
         <button type="submit" class="main-button btn mb-3 mx-4" id="submit-button" disabled>Submit Booking</button>
     </form>
+</div>
     <div class="container card">
         <div id="calendar"></div>
     </div>
