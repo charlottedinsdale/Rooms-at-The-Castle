@@ -15,7 +15,7 @@
         {{ form.as_p }}
         <input type="hidden" id="start_date" name="start_date">
         <input type="hidden" id="end_date" name="end_date">
-        <button type="submit" id="submit-button" disabled>Submit Booking</button>
+        <button type="submit" class="main-button btn mb-3 mx-4" id="submit-button" disabled>Submit Booking</button>
     </form>
     <div class="container card">
         <div id="calendar"></div>
@@ -152,9 +152,9 @@
                     }
                 },
                 eventDidMount: function(info) {
-                    // Style the unavailable dates with a grey background
+                    // Style the unavailable dates with a green background
                     if (info.event.title === 'UNAVAILABLE') {
-                          info.el.style.backgroundColor = '#36454F';  // Grey for unavailable
+                          info.el.style.backgroundColor = '#587b52';  // Darker green for unavailable
                     }
                 }
             });

@@ -328,6 +328,12 @@ iframe {
 
 /* -------------------- Booking Pages --------------*/
 
+/* --------- Calendar ----------------- */
+
+#calendar {
+    background-color: #abc19f;
+}
+
 /*---- Booking Confirmation --- */
 
 #confirmation-container {
@@ -356,11 +362,4 @@ footer {
 
 #copyright {
     margin-bottom: 0;
-}
-
-
-/* ------------------- Main Content ---------------------- */
-
-#calendar {
-    background-color: grey;
 }
