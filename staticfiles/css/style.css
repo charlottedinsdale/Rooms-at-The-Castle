@@ -130,7 +130,7 @@ i:hover {
 
 /* --------------------------- Home Page Content */
 .parallax-one {
-    background-image: url("../images/castle-black-and-white-cropped.jpg");
+    background-image: url("../images/castle-black-and-white-compressed.jpg");
     min-height: 900px; 
     background-attachment: fixed;
     background-position: center;
