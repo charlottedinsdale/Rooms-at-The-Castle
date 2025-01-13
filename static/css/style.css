@@ -30,7 +30,24 @@ i:hover {
 }
 
 .main-button {
-    background-color: #013b1b;
+    background: #013b1b;
+	color: white;
+	border: none;
+	padding: 1rem;
+	border-radius: 10px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.main-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px #013b1b;
 }
 
 .card {
@@ -305,25 +322,16 @@ iframe {
 	gap: 1.5rem;
 }
 
-.login-button {
-    background: #013b1b;
-	color: white;
-	border: none;
-	padding: 1rem;
-	border-radius: 10px;
-	font-size: 1rem;
-	font-weight: 500;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
+/* -------------------- Booking Pages --------------*/
+
+/*---- Booking Confirmation --- */
+
+#confirmation-container {
+    padding: 70px;
 }
 
-.login-button:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 5px 15px #013b1b;
+#confirmation-card {
+    padding: 20px;
 }
 
 /* ------------------- Footer ---------------------- */

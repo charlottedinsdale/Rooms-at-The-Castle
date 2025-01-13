@@ -2,8 +2,13 @@
 
 {% block content %}
 
-<h2>Booking Confirmation for: {{ booking.reference }}</h2>
-<h3>Congratulations {{ booking.user }}! Your booking for {{ booking.guests }} guests in the {{ booking.room.name }} from {{ booking.start_date }} to {{ booking.start_date }} is confirmed!</h1>
+<section id="confirmation-container">
+    <div class="card"  id="confirmation-card">
+        <h3 class="card-title">Booking Confirmation for: {{ booking.reference }}</h3>
+        <h6 class="card-text">Congratulations {{ booking.user }}! Your booking for {{ booking.guests }} guests in the 
+            {{ booking.room.name }} from {{ booking.start_date }} to {{ booking.end_date }} is confirmed!</h6>
 
-<a href="{% url 'home' %}" class="btn main-button">Return to Home</a>
+        <a href="{% url 'home' %}" class="btn main-button">Return to Home</a>
+    </div>
+</section>
 {% endblock %}

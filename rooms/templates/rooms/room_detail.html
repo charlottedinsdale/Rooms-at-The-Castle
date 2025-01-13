@@ -11,34 +11,22 @@
             <div class="card-body">
                 <h1 class="room-title">{{ room.name }}</h1>
                 {% if room.number_of_beds == 1 %}
-                <p class="author room-description">{{ room.number_of_beds }} bed | Up to {{ room.capacity }} guests | Ensuite | £{{ room.price_per_night }} pn</p>
+                <p class="room-description">{{ room.number_of_beds }} bed | Up to {{ room.capacity }} guests | Ensuite | £{{ room.price_per_night }} pn</p>
                 {% else %}
-                <p class="author room-description">{{ room.number_of_beds }} beds | Up to {{ room.capacity }} guests | Ensuite | £{{ room.price_per_night }} pn</p>
+                <p class="room-description">{{ room.number_of_beds }} beds | Up to {{ room.capacity }} guests | Ensuite | £{{ room.price_per_night }} pn</p>
                 {% endif %}
                 <div class="image-container">
                     <img src="{% static 'images/default.jpg' %}" class="card-img" alt="placeholder">
                 </div> 
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
                     {{ room.description | safe }}
                 </p>
+                <!-- BOOK ROOM button with href to bookings url  -->
                 <a href="{% url 'booking_view' room.slug %}"><button class="btn main-button">Book Room</button></a>
             </div>
         </div>
     </div>
 </div>
-
-<!-- BOOK ROOM buton with href to bookings url  -->
       
 
 {% endblock content %}
