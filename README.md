@@ -263,25 +263,6 @@ Lighthouse performance testing was used to test performance, accesibility, best 
 | Submit booking button | Appears only after date selction and redirects to booking confirmation page. | Pass |
 | Return Home button | Redirects to homepage | Pass |
 
-### Account Creation
-
-### Room View
-
-### Room Booking
-
-### Testimonial Submission
-
-### Testimonial Deletion
-
-### Testimonial Editing
-
-### Admin Panel
-- Adding a Room
-- Adding Availability Status (blocking rooms)
-- Managing Accounts
-- Viewing Bookings
-- Managing Testimonials
-
 # Reflection on Development Process
 
 ## Successes
@@ -296,7 +277,18 @@ A key challenge was the time constraint of the project and in the future I would
 
 # Deployment
 
-To deploy the project, user's would need to fork the repository and link this to their own Heroku account, generating their own CONFIG VARS including SECRET_KEY and DATABASE_URL. Ensure that Debug is set to False on deployment. 
+If users wish to deploy this project, they can fork the repository and use the following steps to deploy to Heroku:
+
+1. Create New App: Log in to your Heroku account and click on the "Create New App" button.
+2. App Name: Choose a unique name for your app.
+3. Select Region: Choose the appropriate region.
+4. Create App: Click the "Create App" button.
+5. Deployment Method: In the "Deploy" tab, select GitHub as the deployment method.
+6. Connect to GitHub: Search for the repository name and click "Connect".
+7. Manual or Automatic Deployment: Select either manual or automatic deployment. Ensure the main branch is selected for deployment.
+8. Config Vars: In the "Settings" tab, click "Reveal Config Vars" and input the required environment variables.
+9. Buildpack: Select Node.js and Python as the buildpacks for your project.
+10. Deploy: Once the configuration is complete, click the "Deploy Branch" button. After successful deployment, a "View" button will appear to take you to the live site.
 
 The site was regularly deployed to Heroku in the development stages. The following steps were taken before initial deployment:
 - Django project and first app 'rooms' were set up 
