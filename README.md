@@ -2,6 +2,8 @@
 
 Rooms at The Castle is a room booking website designed to advertise rooms in a pub in the Devonshire countryside to potential customers. Customers are able to learn about the pub's location and history as well as view the individual rooms on offer. Testimonials written by authorised user's are visible on the homepage and can be edited and deleted by users if they wish. In order to make a booking the user must sign up to the website, after which they can book through an interactive calendar. 
 
+![Screenshot 2025-01-13 134700](https://github.com/user-attachments/assets/b69bff4c-e8a0-4255-b052-a01ee4ee85f9)
+
 ![Screenshot 2025-01-13 140953](https://github.com/user-attachments/assets/0aafcf12-ae94-4d6d-8d77-a5bdde001a44)
 
 
