@@ -48,9 +48,11 @@ class HomePage(generic.ListView):
         # If the form is not valid, render the context with the form errors
         return self.get(request, *args, **kwargs)
     
-def edit_testimonial(self, request, testimonial_id):
+def edit_testimonial(request, testimonial_id):
+        print('in edit_testimonial')
         if request.method == "POST":
-            testimonial = get_object_or_404(Testimonial, pk=testimonial_id, user=request.user)
+            testimonial = get_object_or_404(Testimonial, pk=testimonial_id)
+            print('testimonial = ', testimonial_id)
             testimonial_form = TestimonialForm(data=request.POST, instance=testimonial)
 
             if testimonial_form.is_valid() and testimonial.user == request.user:

@@ -77,7 +77,7 @@
         <form id="testimonialForm" method="post" style="margin-top: 1.3em;">
             {% csrf_token %}
             {{ testimonial_form | crispy }}
-            <button type="submit" class="main-button">Submit</button>
+            <button type="submit" class="main-button" id="submitButton">Submit</button>
         </form>
     </div>
     {% else %}

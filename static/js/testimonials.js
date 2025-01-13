@@ -1,6 +1,6 @@
 const editButtons = document.getElementsByClassName("btn-edit");
 const testimonialText = document.getElementById("id_content");
-const testimonialForm = document.getElementById("TestimonialForm");
+const testimonialForm = document.getElementById("testimonialForm");
 const submitButton = document.getElementById("submitButton");
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
@@ -22,7 +22,7 @@ for (let button of editButtons) {
     let testimonialContent = document.getElementById(`testimonial${testimonialId}`).innerText;
     testimonialText.value = testimonialContent;
     submitButton.innerText = "Update";
-    testimonialForm.setAttribute("action", `edit_testimonial/${testimonialId}`);
+    testimonialForm.setAttribute("action", `edit_testimonial/${testimonialId}/`);
   });
 }
 
@@ -30,7 +30,7 @@ for (let button of deleteButtons) {
   button.addEventListener("click", (e) => {
       let testimonialId = e.target.getAttribute("testimonial_id");
       console.log('testimonial id: ', testimonialId)
-      deleteConfirm.href = `delete_testimonial/${testimonialId}`;
+      deleteConfirm.href = `delete_testimonial/${testimonialId}/`;
       deleteModal.show();
   });
 }
