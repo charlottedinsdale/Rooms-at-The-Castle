@@ -189,7 +189,7 @@ Due to the time constraints of the project and issues arising during development
 
 - notifications on the admin panel when a testimonial has been edited by adding an updated_on field to the Testimonial model
 - better Calendar UX and checks to ensure that end_date cannot be before start_date and bookings cannot be made for dates in the past
-- 
+- another modal with total price would be shown before submission of a booking, with users being able too cancel or continue
 
 ## Features to Implement in Future 
 
@@ -198,6 +198,8 @@ The Contact Page, including user contact form and admin email reply feature will
 There will also be a 'Manage Bookings' page where authorised users can manage their current bookings and view details for previous bookings. This will allow users to request cancellations or updates to their stay period or number of guests etc.
 
 There will also be an addition to the Testimonials section, where authorised users can chose to view only their own testimonials from the carousel, so that when there is more data, the user can filter out their own testimonials more easily in order to edit or delete them as they please.
+
+A method for taking payments would be implemented should the site be used in the future, as it has been designed intitially for educational purposes, this was not included in the initial development phase.
 
 # Testing
 
