@@ -214,7 +214,32 @@ A method for taking payments would be implemented should the site be used in the
 
 ## Code Validation
 
+### HTML Validation
+
+### CSS Validation
+
+### Python Linting
+
 ## Manual Testing
+
+### Account Creation
+
+### Room View
+
+### Room Booking
+
+### Testimonial Submission
+
+### Testimonial Deletion
+
+### Testimonial Editing
+
+### Admin Panel
+- Adding a Room
+- Adding Availability Status (blocking rooms)
+- Managing Accounts
+- Viewing Bookings
+- Managing Testimonials
 
 # Reflection on Development Process
 
