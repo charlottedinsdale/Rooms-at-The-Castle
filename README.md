@@ -240,6 +240,26 @@ Lighthouse performance testing was used to test performance, accesibility, best 
 
 ## Manual Testing
 
+
+| Feature       | Expected Behaviour | Pass/Fail |
+| ------------- | -------------      | --------- |
+| Sign Up  | Users can sign up to the website by creating a username and secure password. They are then redirected to the homepage. | Pass |
+| Sign In  | Content Cell       |           |
+| Sign Out  | Content Cell       |           |
+| View Rooms  | Content Cell       |           |
+| Select Room  | Content Cell       |           |
+| Make Booking  | Content Cell       |           |
+| Submit Testimonial  | Content Cell       |           |
+| View Testimonials  | Content Cell       |           |
+| Delete Testimonial  | Content Cell       |           |
+| Edit Testimonial  | Content Cell       |           |
+| Manage Rooms on Admin Panel  | Content Cell       |           |
+| View Users on Admin Panel  | Content Cell       |           |
+| Manage Bookings on Admin Panel  | Content Cell       |           |
+| View Room Availability on Admin Panel  | Content Cell       |           |
+| Block Rooms on Admin Panel  | Content Cell       |           |
+| Approve Testimonials on Admin Panel  | Content Cell       |           |
+
 ### Account Creation
 
 ### Room View
@@ -272,6 +292,8 @@ I faced quite a few challenges when implementing the dynamic calendar and linkin
 A key challenge was the time constraint of the project and in the future I would look to improve on code validation and python linting at an earlier stage. Use of a project board and well planned user stories was invaluable to being able to produce the project within the assesssment period.
 
 # Deployment
+
+To deploy the project, user's would need to fork the repository and link this to their own Heroku account, generating their own CONFIG VARS including SECRET_KEY and DATABASE_URL. Ensure that Debug is set to False on deployment. 
 
 The site was regularly deployed to Heroku in the development stages. The following steps were taken before initial deployment:
 - Django project and first app 'rooms' were set up 
